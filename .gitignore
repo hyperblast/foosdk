@@ -1,0 +1,8 @@
+build/*
+sdk/foobar2000/foo_input_validator/*
+wtl/AppWiz/*
+wtl/AppWizCE/*
+wtl/AppWizMobile/*
+wtl/Samples/*
+
+*.user
