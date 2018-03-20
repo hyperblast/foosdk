@@ -139,6 +139,7 @@ set(
     sdk/foobar2000/SDK/commandline.cpp
     sdk/foobar2000/SDK/completion_notify.cpp
     sdk/foobar2000/SDK/componentversion.cpp
+    sdk/foobar2000/SDK/config_io_callback.cpp
     sdk/foobar2000/SDK/config_object.cpp
     sdk/foobar2000/SDK/console.cpp
     sdk/foobar2000/SDK/dsp.cpp
@@ -216,6 +217,7 @@ set(
     sdk/foobar2000/SDK/dsp_manager.h
     sdk/foobar2000/SDK/event_logger.h
     sdk/foobar2000/SDK/exceptions.h
+    sdk/foobar2000/SDK/filesystem_transacted.h
     sdk/foobar2000/SDK/file_format_sanitizer.h
     sdk/foobar2000/SDK/file_info.h
     sdk/foobar2000/SDK/file_info_impl.h
@@ -386,6 +388,7 @@ set(
     sdk/foobar2000/ATLHelpers/inplace_edit.cpp
     sdk/foobar2000/ATLHelpers/inplace_edit_v2.cpp
     sdk/foobar2000/ATLHelpers/misc.cpp
+    sdk/foobar2000/ATLHelpers/ui_element_helpers.cpp
 )
 
 set(
@@ -406,6 +409,7 @@ set(
     sdk/foobar2000/ATLHelpers/inplace_edit_v2.h
     sdk/foobar2000/ATLHelpers/misc.h
     sdk/foobar2000/ATLHelpers/stdafx.h
+    sdk/foobar2000/ATLHelpers/ui_element_helpers.h
     sdk/foobar2000/ATLHelpers/WindowPositionUtils.h
     sdk/foobar2000/ATLHelpers/WTL-PP.h
 )
