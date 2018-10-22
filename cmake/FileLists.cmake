@@ -80,6 +80,7 @@ set(
     sdk/pfc/bsearch_inline.h
     sdk/pfc/byte_order_helper.h
     sdk/pfc/chain_list_v2.h
+    sdk/pfc/cmd_thread.h
     sdk/pfc/com_ptr_t.h
     sdk/pfc/cpuid.h
     sdk/pfc/event.h
@@ -151,6 +152,7 @@ set(
     sdk/foobar2000/SDK/file_operation_callback.cpp
     sdk/foobar2000/SDK/filesystem.cpp
     sdk/foobar2000/SDK/filesystem_helper.cpp
+    sdk/foobar2000/SDK/foosort.cpp
     sdk/foobar2000/SDK/guids.cpp
     sdk/foobar2000/SDK/hasher_md5.cpp
     sdk/foobar2000/SDK/input.cpp
@@ -228,6 +230,7 @@ set(
     sdk/foobar2000/SDK/foobar2000-pfc.h
     sdk/foobar2000/SDK/foobar2000-winver.h
     sdk/foobar2000/SDK/foobar2000.h
+    sdk/foobar2000/SDK/foosort.h
     sdk/foobar2000/SDK/genrand.h
     sdk/foobar2000/SDK/hasher_md5.h
     sdk/foobar2000/SDK/http_client.h
@@ -428,6 +431,7 @@ set(
     sdk/foobar2000/foo_sample/input_raw.cpp
     sdk/foobar2000/foo_sample/main.cpp
     sdk/foobar2000/foo_sample/mainmenu.cpp
+    sdk/foobar2000/foo_sample/IO.cpp
     sdk/foobar2000/foo_sample/playback_state.cpp
     sdk/foobar2000/foo_sample/preferences.cpp
     sdk/foobar2000/foo_sample/rating.cpp
