@@ -223,6 +223,7 @@ set(
     sdk/foobar2000/SDK/file_format_sanitizer.h
     sdk/foobar2000/SDK/file_info.h
     sdk/foobar2000/SDK/file_info_impl.h
+    sdk/foobar2000/SDK/file_lock_manager.h
     sdk/foobar2000/SDK/file_operation_callback.h
     sdk/foobar2000/SDK/filesystem.h
     sdk/foobar2000/SDK/filesystem_helper.h
