@@ -436,6 +436,7 @@ set(
     sdk/foobar2000/foo_sample/playback_state.cpp
     sdk/foobar2000/foo_sample/preferences.cpp
     sdk/foobar2000/foo_sample/rating.cpp
+    sdk/foobar2000/foo_sample/ui_and_threads.cpp
     sdk/foobar2000/foo_sample/ui_element.cpp
     sdk/foobar2000/foo_sample/ui_element_dialog.cpp
     sdk/foobar2000/foo_sample/foo_sample.rc
