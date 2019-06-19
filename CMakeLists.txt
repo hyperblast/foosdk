@@ -68,6 +68,7 @@ if(FOO_ATL_HELPERS)
 endif()
 
 include_directories(sdk)
+include_directories(sdk/foobar2000)
 
 add_library(foosdk STATIC ${LIB_SOURCES})
 
