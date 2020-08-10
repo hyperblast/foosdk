@@ -8,14 +8,14 @@ endif()
 
 option(FOO_SDK_HELPERS      "Include SDK helpers" ON)
 option(FOO_ATL_HELPERS      "Include ATL helpers (enables usage of ATL)" ON)
-option(FOO_STATIC_RUNTIME   "Use static C++ runtime libraries" ON)
+option(FOO_STATIC_STDLIB    "Use static standard libraries" OFF)
 option(FOO_SYSTEM_WTL       "Use system WTL library" OFF)
 option(FOO_SAMPLE           "Build foo_sample component" OFF)
 
 set(CMAKE_MODULE_PATH   "${CMAKE_CURRENT_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH}")
 set(CMAKE_CXX_FLAGS     "${CMAKE_CXX_FLAGS} /wd4302 /wd4838 /wd4996 /d2notypeopt")
 
-if(FOO_STATIC_RUNTIME)
+if(FOO_STATIC_STDLIB)
     foreach(FLAGS CMAKE_CXX_FLAGS_DEBUG
                   CMAKE_CXX_FLAGS_RELEASE
                   CMAKE_CXX_FLAGS_MINSIZEREL
