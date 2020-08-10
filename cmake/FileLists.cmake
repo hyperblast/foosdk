@@ -283,6 +283,7 @@ set(
     sdk/foobar2000/SDK/ui.h
     sdk/foobar2000/SDK/ui_edit_context.h
     sdk/foobar2000/SDK/ui_element.h
+    sdk/foobar2000/SDK/ui_element_typable_window_manager.h
     sdk/foobar2000/SDK/unpack.h
     sdk/foobar2000/SDK/vis.h
 )
