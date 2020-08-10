@@ -24,7 +24,7 @@ if(FOO_STATIC_STDLIB)
     endforeach()
 endif()
 
-set(WINVER 0x0501)
+set(WINVER 0x0601)
 
 add_definitions(
     -D_UNICODE -DUNICODE -DSTRICT -DWINVER=${WINVER} -D_WIN32_WINNT=${WINVER}

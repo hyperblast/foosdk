@@ -120,6 +120,7 @@ set(
     sdk/pfc/syncd_storage.h
     sdk/pfc/synchro.h
     sdk/pfc/synchro_win.h
+    sdk/pfc/targetver.h
     sdk/pfc/threads.h
     sdk/pfc/timers.h
     sdk/pfc/traits.h
@@ -226,6 +227,8 @@ set(
     sdk/foobar2000/SDK/filesystem_transacted.h
     sdk/foobar2000/SDK/file_format_sanitizer.h
     sdk/foobar2000/SDK/file_info.h
+    sdk/foobar2000/SDK/file_info_filter.h
+    sdk/foobar2000/SDK/file_info_filter_impl.h
     sdk/foobar2000/SDK/file_info_impl.h
     sdk/foobar2000/SDK/file_lock_manager.h
     sdk/foobar2000/SDK/file_operation_callback.h
@@ -240,6 +243,7 @@ set(
     sdk/foobar2000/SDK/hasher_md5.h
     sdk/foobar2000/SDK/http_client.h
     sdk/foobar2000/SDK/icon_remap.h
+    sdk/foobar2000/SDK/imageLoaderLite.h
     sdk/foobar2000/SDK/info_lookup_handler.h
     sdk/foobar2000/SDK/initquit.h
     sdk/foobar2000/SDK/input.h
@@ -279,6 +283,7 @@ set(
     sdk/foobar2000/SDK/tag_processor.h
     sdk/foobar2000/SDK/threaded_process.h
     sdk/foobar2000/SDK/titleformat.h
+    sdk/foobar2000/SDK/tracks.h
     sdk/foobar2000/SDK/track_property.h
     sdk/foobar2000/SDK/ui.h
     sdk/foobar2000/SDK/ui_edit_context.h
@@ -315,6 +320,7 @@ set(
     sdk/foobar2000/helpers/seekabilizer.cpp
     sdk/foobar2000/helpers/stream_buffer_helper.cpp
     sdk/foobar2000/helpers/text_file_loader.cpp
+    sdk/foobar2000/helpers/text_file_loader_v2.cpp
     sdk/foobar2000/helpers/ThreadUtils.cpp
     sdk/foobar2000/helpers/track_property_callback_impl.cpp
     sdk/foobar2000/helpers/ui_element_helpers.cpp
@@ -328,6 +334,7 @@ set(
 
 set(
     SDK_HELPERS_HEADERS
+    sdk/foobar2000/helpers/advconfig_impl.h
     sdk/foobar2000/helpers/advconfig_runtime.h
     sdk/foobar2000/helpers/album_art_helpers.h
     sdk/foobar2000/helpers/atl-misc.h
@@ -342,6 +349,7 @@ set(
     sdk/foobar2000/helpers/fb2k_threads.h
     sdk/foobar2000/helpers/fb2k_wfx.h
     sdk/foobar2000/helpers/fileReadAhead.h
+    sdk/foobar2000/helpers/file_readonly.h
     sdk/foobar2000/helpers/foobar2000+atl.h
     sdk/foobar2000/helpers/fullFileBuffer.h
     sdk/foobar2000/helpers/bitreader_helper.h
@@ -369,6 +377,7 @@ set(
     sdk/foobar2000/helpers/input_helper_cue.h
     sdk/foobar2000/helpers/input_logging.h
     sdk/foobar2000/helpers/input_stream_info_reader.h
+    sdk/foobar2000/helpers/metadb_handle_set.h
     sdk/foobar2000/helpers/meta_table_builder.h
     sdk/foobar2000/helpers/metadb_io_hintlist.h
     sdk/foobar2000/helpers/mp3_utils.h
@@ -385,6 +394,7 @@ set(
     sdk/foobar2000/helpers/stream_buffer_helper.h
     sdk/foobar2000/helpers/tag_write_callback_impl.h
     sdk/foobar2000/helpers/text_file_loader.h
+    sdk/foobar2000/helpers/text_file_loader_v2.h
     sdk/foobar2000/helpers/ThreadUtils.h
     sdk/foobar2000/helpers/track_property_callback_impl.h
     sdk/foobar2000/helpers/ui_element_helpers.h
@@ -409,10 +419,12 @@ set(
     sdk/libPPUI/CListControlTruncationTooltipImpl.cpp
     sdk/libPPUI/CListControlWithSelection.cpp
     sdk/libPPUI/CMiddleDragImpl.cpp
+    sdk/libPPUI/commandline_parser.cpp
     sdk/libPPUI/Controls.cpp
     sdk/libPPUI/CDialogResizeHelper.cpp
     sdk/libPPUI/CPowerRequest.cpp
     sdk/libPPUI/IDataObjectUtils.cpp
+    sdk/libPPUI/InPlaceCombo.cpp
     sdk/libPPUI/InPlaceEdit.cpp
     sdk/libPPUI/InPlaceEditTable.cpp
     sdk/libPPUI/listview_helper.cpp
@@ -449,12 +461,14 @@ set(
     sdk/libPPUI/CListControl_EditImpl.h
     sdk/libPPUI/CListViewCtrlEx.h
     sdk/libPPUI/CMiddleDragImpl.h
+    sdk/libPPUI/commandline_parser.h
     sdk/libPPUI/Controls.h
     sdk/libPPUI/CPopupTooltipMessage.h
     sdk/libPPUI/CPowerRequest.h
     sdk/libPPUI/CPropVariant.h
     sdk/libPPUI/CWindowCreateAndDelete.h
     sdk/libPPUI/CDialogResizeHelper.h
+    sdk/libPPUI/gdiplus-helpers-webp.h
     sdk/libPPUI/gdiplus_helpers.h
     sdk/libPPUI/GDIUtils.h
     sdk/libPPUI/gesture.h
