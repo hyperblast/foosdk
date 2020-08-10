@@ -15,14 +15,12 @@ set(
     wtl/Include/atlgdi.h
     wtl/Include/atlmisc.h
     wtl/Include/atlprint.h
-    wtl/Include/atlresce.h
     wtl/Include/atlres.h
     wtl/Include/atlribbon.h
     wtl/Include/atlscrl.h
     wtl/Include/atlsplit.h
     wtl/Include/atltheme.h
     wtl/Include/atluser.h
-    wtl/Include/atlwince.h
     wtl/Include/atlwinx.h
 )
 
