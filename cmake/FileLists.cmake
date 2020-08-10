@@ -273,7 +273,7 @@ set(
     sdk/foobar2000/SDK/search_tools.h
     sdk/foobar2000/SDK/service.h
     sdk/foobar2000/SDK/service_by_guid.h
-    sdk/foobar2000/SDK/service_factory.h
+    sdk/foobar2000/SDK/service_compat.h
     sdk/foobar2000/SDK/service_impl.h
     sdk/foobar2000/SDK/system_time_keeper.h
     sdk/foobar2000/SDK/tag_processor.h
