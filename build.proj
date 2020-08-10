@@ -15,7 +15,7 @@
         </CreateItem>
         <MakeDir Directories="$(BuildDir)" />
         <Exec
-            Command="cmake @(BuildFlags -> '%(Identity)', ' ') $(MSBuildProjectDirectory)"
+            Command="cmake -A Win32 @(BuildFlags -> '%(Identity)', ' ') $(MSBuildProjectDirectory)"
             WorkingDirectory="$(BuildDir)" />
     </Target>
 
