@@ -110,6 +110,7 @@ set(
     sdk/pfc/ref_counter.h
     sdk/pfc/sort.h
     sdk/pfc/splitString.h
+    sdk/pfc/stdsort.h
     sdk/pfc/string8_impl.h
     sdk/pfc/string_base.h
     sdk/pfc/string_conv.h
@@ -401,6 +402,7 @@ set(
     sdk/libPPUI/CEditWithButtons.cpp
     sdk/libPPUI/clipboard.cpp
     sdk/libPPUI/CListAccessible.cpp
+    sdk/libPPUI/CListControl-Cells.cpp
     sdk/libPPUI/CListControl.cpp
     sdk/libPPUI/CListControlHeaderImpl.cpp
     sdk/libPPUI/CListControlTruncationTooltipImpl.cpp
@@ -432,6 +434,9 @@ set(
     sdk/libPPUI/CIconOverlayWindow.h
     sdk/libPPUI/clipboard.h
     sdk/libPPUI/CListAccessible.h
+    sdk/libPPUI/CListControl-Cell.h
+    sdk/libPPUI/CListControl-Cells-Compat.h
+    sdk/libPPUI/CListControl-Cells.h
     sdk/libPPUI/CListControl.h
     sdk/libPPUI/CListControlComplete.h
     sdk/libPPUI/CListControlHeaderImpl.h
@@ -490,6 +495,7 @@ set(
     sdk/foobar2000/foo_sample/mainmenu.cpp
     sdk/foobar2000/foo_sample/IO.cpp
     sdk/foobar2000/foo_sample/playback_state.cpp
+    sdk/foobar2000/foo_sample/playback_stream_capture.cpp
     sdk/foobar2000/foo_sample/preferences.cpp
     sdk/foobar2000/foo_sample/rating.cpp
     sdk/foobar2000/foo_sample/ui_and_threads.cpp
@@ -500,6 +506,7 @@ set(
 
 set(
     SAMPLE_HEADERS
+    sdk/foobar2000/foo_sample/playback_stream_capture.h
     sdk/foobar2000/foo_sample/resource.h
     sdk/foobar2000/foo_sample/stdafx.h
 )
