@@ -434,8 +434,10 @@ set(
     sdk/libPPUI/CListAccessible.h
     sdk/libPPUI/CListControl.h
     sdk/libPPUI/CListControlComplete.h
+    sdk/libPPUI/CListControlHeaderImpl.h
     sdk/libPPUI/CListControlOwnerData.h
     sdk/libPPUI/CListControlSimple.h
+    sdk/libPPUI/CListControlTruncationTooltipImpl.h
     sdk/libPPUI/CListControlUserOptions.h
     sdk/libPPUI/CListControlWithSelection.h
     sdk/libPPUI/CListControl_EditImpl.h
@@ -484,6 +486,7 @@ set(
     sdk/foobar2000/foo_sample/listcontrol-ownerdata.cpp
     sdk/foobar2000/foo_sample/listcontrol-simple.cpp
     sdk/foobar2000/foo_sample/main.cpp
+    sdk/foobar2000/foo_sample/mainmenu-dynamic.cpp
     sdk/foobar2000/foo_sample/mainmenu.cpp
     sdk/foobar2000/foo_sample/IO.cpp
     sdk/foobar2000/foo_sample/playback_state.cpp
