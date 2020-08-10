@@ -6,8 +6,8 @@ if(NOT WIN32)
     message(FATAL_ERROR "This project requires WIN32 target.")
 endif()
 
-option(FOO_SDK_HELPERS      "Include SDK helpers" ON)
-option(FOO_ATL_HELPERS      "Include ATL helpers (enables usage of ATL)" ON)
+option(FOO_PPUI             "Include libPPUI (adds usage of ATL/WTL)" ON)
+option(FOO_SDK_HELPERS      "Include SDK helpers (requires FOO_PPUI)" ON)
 option(FOO_STATIC_STDLIB    "Use static standard libraries" OFF)
 option(FOO_SYSTEM_WTL       "Use system WTL library" OFF)
 option(FOO_SAMPLE           "Build foo_sample component" OFF)
@@ -32,11 +32,7 @@ add_definitions(
 
 set(INCLUDE_WTL OFF)
 
-if(FOO_ATL_HELPERS)
-    if(NOT FOO_SDK_HELPERS)
-        message(SEND_ERROR "FOO_ATL_HELPERS option requires FOO_SDK_HELPERS.")
-    endif()
-
+if(FOO_PPUI)
     if(FOO_SYSTEM_WTL)
         find_package(Wtl REQUIRED)
         include_directories(${WTL_INCLUDE_DIRS})
@@ -45,6 +41,17 @@ if(FOO_ATL_HELPERS)
         set(INCLUDE_WTL ON)
     endif()
 endif()
+
+function(option_dependency_check OPT1 OPT2)
+    if(${OPT1})
+        if(NOT ${OPT2})
+            message(SEND_ERROR "Option ${OPT1} requires option ${OPT2}")
+        endif()
+    endif()
+endfunction()
+
+option_dependency_check(FOO_SDK_HELPERS FOO_PPUI)
+option_dependency_check(FOO_SAMPLE      FOO_SDK_HELPERS)
 
 include(FileLists)
 
@@ -63,8 +70,8 @@ if(FOO_SDK_HELPERS)
     set(LIB_SOURCES ${LIB_SOURCES} ${SDK_HELPERS_SOURCES} ${SDK_HELPERS_HEADERS})
 endif()
 
-if(FOO_ATL_HELPERS)
-    set(LIB_SOURCES ${LIB_SOURCES} ${ATL_HELPERS_SOURCES} ${ATL_HELPERS_HEADERS})
+if(FOO_PPUI)
+    set(LIB_SOURCES ${LIB_SOURCES} ${PPUI_SOURCES} ${PPUI_HEADERS})
 endif()
 
 include_directories(sdk)
@@ -92,6 +99,6 @@ if(FOO_SDK_HELPERS)
     install(FILES ${SDK_HELPERS_HEADERS} DESTINATION include/foobar2000/helpers)
 endif()
 
-if(FOO_ATL_HELPERS)
-    install(FILES ${ATL_HELPERS_HEADERS} DESTINATION include/foobar2000/ATLHelpers)
+if(FOO_PPUI)
+    install(FILES ${PPUI_HEADERS} DESTINATION include/libPPUI)
 endif()

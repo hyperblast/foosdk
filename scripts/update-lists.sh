@@ -21,10 +21,12 @@ function dump_dir()
 
 function dump_vcxproj()
 {
+    export VCXPROJ_IGNORE="$IGNORE$"
+
     "$script_dir/dump-vcxproj.sh" $1 $2 $3 >> "$out_file"
 }
 
-export VCXPROJ_IGNORE='(stdafx|PCH|nix-objects|CEditWithButtons)\.cpp$'
+IGNORE="stdafx\\.cpp"
 
 cd "$script_dir/.."
 rm -f $out_file || true
@@ -32,25 +34,25 @@ mkdir -p $(dirname $out_file)
 
 write_prologue
 
-dump_dir WTL_HEADERS 'wtl/Include/*.h'
+dump_dir WTL_HEADERS    'wtl/Include/*.h'
 dump_dir SHARED_HEADERS 'sdk/foobar2000/shared/*.h'
 dump_dir SHARED_LIBRARY 'sdk/foobar2000/shared/shared.lib'
 
-dump_vcxproj PFC \
+IGNORE="($IGNORE)|(pfc-fb2k-hooks\\.cpp)|(nix-objects\\.(cpp|h))" dump_vcxproj PFC \
     sdk/pfc/pfc.vcxproj
 
 dump_vcxproj SDK \
     sdk/foobar2000/SDK/foobar2000_SDK.vcxproj
 
-dump_vcxproj SDK_HELPERS \
+IGNORE="($IGNORE)|(TypeFind\\.h)" dump_vcxproj SDK_HELPERS \
     sdk/foobar2000/helpers/foobar2000_sdk_helpers.vcxproj
 
-dump_vcxproj ATL_HELPERS \
-    sdk/foobar2000/ATLHelpers/foobar2000_ATL_helpers.vcxproj
+dump_vcxproj PPUI \
+    sdk/libPPUI/libPPUI.vcxproj
 
 dump_vcxproj COMPONENT_CLIENT \
     sdk/foobar2000/foobar2000_component_client/foobar2000_component_client.vcxproj \
     --skip-headers
 
-dump_vcxproj SAMPLE \
+IGNORE="($IGNORE)|(PCH\\.cpp)" dump_vcxproj SAMPLE \
     sdk/foobar2000/foo_sample/foo_sample.vcxproj
