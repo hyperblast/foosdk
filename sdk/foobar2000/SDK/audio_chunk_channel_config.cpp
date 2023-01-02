@@ -88,7 +88,7 @@ static const unsigned g_audio_channel_config_table[] =
 	audio_chunk::channel_front_left | audio_chunk::channel_front_right | audio_chunk::channel_back_left | audio_chunk::channel_back_right,
 	audio_chunk::channel_front_left | audio_chunk::channel_front_right | audio_chunk::channel_back_left | audio_chunk::channel_back_right | audio_chunk::channel_lfe,
 	audio_chunk::channel_config_5point1,
-	0,
+	audio_chunk::channel_config_5point1_side | audio_chunk::channel_back_center,
 	audio_chunk::channel_config_7point1,
 	0,
 	audio_chunk::channel_config_7point1 | audio_chunk::channel_front_center_right | audio_chunk::channel_front_center_left,
@@ -108,17 +108,27 @@ unsigned audio_chunk::g_guess_channel_config(unsigned count)
 }
 
 unsigned audio_chunk::g_guess_channel_config_xiph(unsigned count) {
-	return g_guess_channel_config(count);
+	switch (count) {
+	case 3:
+		return audio_chunk::channel_front_left | audio_chunk::channel_front_center | audio_chunk::channel_front_right;
+	case 5:
+		return audio_chunk::channel_front_left | audio_chunk::channel_front_center | audio_chunk::channel_front_right | audio_chunk::channel_back_left | audio_chunk::channel_back_right;
+	default:
+		return g_guess_channel_config(count);
+	}	
 }
 
 unsigned audio_chunk::g_channel_index_from_flag(unsigned p_config,unsigned p_flag) {
-	unsigned index = 0;
-	for(unsigned walk = 0; walk < 32; walk++) {
-		unsigned query = 1 << walk;
-		if (p_flag & query) return index;
-		if (p_config & query) index++;
+	if (p_config & p_flag) {
+		unsigned index = 0;
+
+		for (unsigned walk = 0; walk < 32; walk++) {
+			unsigned query = 1 << walk;
+			if (p_flag & query) return index;
+			if (p_config & query) index++;
+		}
 	}
-	return ~0;
+	return UINT_MAX;
 }
 
 unsigned audio_chunk::g_extract_channel_flag(unsigned p_config,unsigned p_index)

@@ -36,7 +36,6 @@ write_prologue
 
 dump_dir WTL_HEADERS    'wtl/Include/*.h'
 dump_dir SHARED_HEADERS 'sdk/foobar2000/shared/*.h'
-dump_dir SHARED_LIBRARY 'sdk/foobar2000/shared/shared.lib'
 
 IGNORE="($IGNORE)|(pfc-fb2k-hooks\\.cpp)|(nix-objects\\.(cpp|h))" dump_vcxproj PFC \
     sdk/pfc/pfc.vcxproj
