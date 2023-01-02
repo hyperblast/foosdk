@@ -34,28 +34,29 @@ set(
 )
 
 set(
-    SHARED_LIBRARY
-    sdk/foobar2000/shared/shared.lib
-)
-
-set(
     PFC_SOURCES
     sdk/pfc/audio_math.cpp
     sdk/pfc/audio_sample.cpp
     sdk/pfc/base64.cpp
+    sdk/pfc/bigmem.cpp
     sdk/pfc/bit_array.cpp
     sdk/pfc/bsearch.cpp
     sdk/pfc/cpuid.cpp
+    sdk/pfc/crashWithMessage.cpp
     sdk/pfc/filehandle.cpp
     sdk/pfc/guid.cpp
     sdk/pfc/other.cpp
     sdk/pfc/pathUtils.cpp
     sdk/pfc/printf.cpp
     sdk/pfc/selftest.cpp
+    sdk/pfc/SmartStrStr.cpp
     sdk/pfc/sort.cpp
+    sdk/pfc/splitString2.cpp
+    sdk/pfc/string-compare.cpp
+    sdk/pfc/string-conv-lite.cpp
+    sdk/pfc/string-lite.cpp
     sdk/pfc/string_base.cpp
     sdk/pfc/string_conv.cpp
-    sdk/pfc/stringNew.cpp
     sdk/pfc/threads.cpp
     sdk/pfc/timers.cpp
     sdk/pfc/utf8.cpp
@@ -71,6 +72,7 @@ set(
     sdk/pfc/autoref.h
     sdk/pfc/avltree.h
     sdk/pfc/base64.h
+    sdk/pfc/bigmem.h
     sdk/pfc/binary_search.h
     sdk/pfc/bit_array.h
     sdk/pfc/bit_array_impl.h
@@ -82,25 +84,32 @@ set(
     sdk/pfc/cmd_thread.h
     sdk/pfc/com_ptr_t.h
     sdk/pfc/cpuid.h
+    sdk/pfc/debug.h
     sdk/pfc/event.h
     sdk/pfc/filehandle.h
+    sdk/pfc/fixed_map.h
+    sdk/pfc/fpu.h
     sdk/pfc/guid.h
-    sdk/pfc/instance_tracker.h
+    sdk/pfc/instance_tracker_legacy.h
     sdk/pfc/int_types.h
     sdk/pfc/iterators.h
+    sdk/pfc/killswitch.h
     sdk/pfc/list.h
     sdk/pfc/lockless.h
     sdk/pfc/map.h
     sdk/pfc/memalign.h
+    sdk/pfc/mem_block.h
     sdk/pfc/notifyList.h
+    sdk/pfc/once.h
     sdk/pfc/order_helper.h
     sdk/pfc/other.h
     sdk/pfc/pathUtils.h
     sdk/pfc/pfc-fb2k-hooks.h
+    sdk/pfc/pfc-lite.h
     sdk/pfc/pfc.h
+    sdk/pfc/platform-objects.h
     sdk/pfc/pocket_char_ops.h
     sdk/pfc/pool.h
-    sdk/pfc/pp-gettickcount.h
     sdk/pfc/pp-winapi.h
     sdk/pfc/primitives.h
     sdk/pfc/primitives_part2.h
@@ -108,17 +117,24 @@ set(
     sdk/pfc/ptr_list.h
     sdk/pfc/rcptr.h
     sdk/pfc/ref_counter.h
+    sdk/pfc/SmartStrStr.h
     sdk/pfc/sort.h
     sdk/pfc/splitString.h
+    sdk/pfc/splitString2.h
     sdk/pfc/stdsort.h
-    sdk/pfc/string8_impl.h
+    sdk/pfc/string-compare.h
+    sdk/pfc/string-conv-lite.h
+    sdk/pfc/string-interface.h
+    sdk/pfc/string-lite.h
+    sdk/pfc/string-part.h
     sdk/pfc/string_base.h
     sdk/pfc/string_conv.h
     sdk/pfc/string_list.h
-    sdk/pfc/stringNew.h
+    sdk/pfc/string_simple.h
     sdk/pfc/suppress_fb2k_hooks.h
     sdk/pfc/syncd_storage.h
     sdk/pfc/synchro.h
+    sdk/pfc/synchro_nix.h
     sdk/pfc/synchro_win.h
     sdk/pfc/targetver.h
     sdk/pfc/threads.h
@@ -180,7 +196,6 @@ set(
     sdk/foobar2000/SDK/preferences_page.cpp
     sdk/foobar2000/SDK/replaygain.cpp
     sdk/foobar2000/SDK/replaygain_info.cpp
-    sdk/foobar2000/SDK/search_tools.cpp
     sdk/foobar2000/SDK/service.cpp
     sdk/foobar2000/SDK/tag_processor.cpp
     sdk/foobar2000/SDK/tag_processor_id3v2.cpp
@@ -224,6 +239,8 @@ set(
     sdk/foobar2000/SDK/dsp_manager.h
     sdk/foobar2000/SDK/event_logger.h
     sdk/foobar2000/SDK/exceptions.h
+    sdk/foobar2000/SDK/exception_io.h
+    sdk/foobar2000/SDK/file.h
     sdk/foobar2000/SDK/filesystem_transacted.h
     sdk/foobar2000/SDK/file_format_sanitizer.h
     sdk/foobar2000/SDK/file_info.h
@@ -258,8 +275,12 @@ set(
     sdk/foobar2000/SDK/menu_helpers.h
     sdk/foobar2000/SDK/message_loop.h
     sdk/foobar2000/SDK/metadb.h
+    sdk/foobar2000/SDK/metadb_callbacks.h
+    sdk/foobar2000/SDK/metadb_display_field_provider.h
     sdk/foobar2000/SDK/metadb_handle.h
+    sdk/foobar2000/SDK/metadb_index.h
     sdk/foobar2000/SDK/modeless_dialog.h
+    sdk/foobar2000/SDK/noInfo.h
     sdk/foobar2000/SDK/ole_interaction.h
     sdk/foobar2000/SDK/output.h
     sdk/foobar2000/SDK/packet_decoder.h
@@ -303,6 +324,7 @@ set(
     sdk/foobar2000/helpers/cue_parser.cpp
     sdk/foobar2000/helpers/cue_parser_embedding.cpp
     sdk/foobar2000/helpers/cuesheet_index_list.cpp
+    sdk/foobar2000/helpers/DarkMode.cpp
     sdk/foobar2000/helpers/dialog_resize_helper.cpp
     sdk/foobar2000/helpers/dropdown_helper.cpp
     sdk/foobar2000/helpers/dynamic_bitrate_helper.cpp
@@ -340,6 +362,7 @@ set(
     sdk/foobar2000/helpers/advconfig_runtime.h
     sdk/foobar2000/helpers/album_art_helpers.h
     sdk/foobar2000/helpers/atl-misc.h
+    sdk/foobar2000/helpers/audio_render_float.h
     sdk/foobar2000/helpers/AutoComplete.h
     sdk/foobar2000/helpers/BumpableElem.h
     sdk/foobar2000/helpers/CDialogResizeHelper.h
@@ -347,6 +370,7 @@ set(
     sdk/foobar2000/helpers/CPropVariant.h
     sdk/foobar2000/helpers/CSingleThreadWrapper.h
     sdk/foobar2000/helpers/CTableEditHelper-Legacy.h
+    sdk/foobar2000/helpers/DarkMode.h
     sdk/foobar2000/helpers/duration_counter.h
     sdk/foobar2000/helpers/fb2k_threads.h
     sdk/foobar2000/helpers/fb2k_wfx.h
@@ -418,6 +442,7 @@ set(
     sdk/libPPUI/clipboard.cpp
     sdk/libPPUI/CListAccessible.cpp
     sdk/libPPUI/CListControl-Cells.cpp
+    sdk/libPPUI/CListControl-Subst.cpp
     sdk/libPPUI/CListControl.cpp
     sdk/libPPUI/CListControlHeaderImpl.cpp
     sdk/libPPUI/CListControlTruncationTooltipImpl.cpp
@@ -427,13 +452,16 @@ set(
     sdk/libPPUI/Controls.cpp
     sdk/libPPUI/CDialogResizeHelper.cpp
     sdk/libPPUI/CPowerRequest.cpp
+    sdk/libPPUI/DarkMode.cpp
+    sdk/libPPUI/gdiplus_helpers.cpp
+    sdk/libPPUI/GDIUtils.cpp
     sdk/libPPUI/IDataObjectUtils.cpp
+    sdk/libPPUI/ImageEncoder.cpp
     sdk/libPPUI/InPlaceCombo.cpp
     sdk/libPPUI/InPlaceEdit.cpp
     sdk/libPPUI/InPlaceEditTable.cpp
     sdk/libPPUI/listview_helper.cpp
     sdk/libPPUI/PaintUtils.cpp
-    sdk/libPPUI/SmartStrStr.cpp
     sdk/libPPUI/TypeFind.cpp
     sdk/libPPUI/win32_op.cpp
     sdk/libPPUI/win32_utility.cpp
@@ -443,6 +471,7 @@ set(
     PPUI_HEADERS
     sdk/libPPUI/AutoComplete.h
     sdk/libPPUI/CButtonLite.h
+    sdk/libPPUI/CContainedWindowSimple.h
     sdk/libPPUI/CDialogResizeHelperCompat.h
     sdk/libPPUI/CEditWithButtons.h
     sdk/libPPUI/CEnumString.h
@@ -454,6 +483,7 @@ set(
     sdk/libPPUI/CListControl-Cell.h
     sdk/libPPUI/CListControl-Cells-Compat.h
     sdk/libPPUI/CListControl-Cells.h
+    sdk/libPPUI/CListControl-Subst.h
     sdk/libPPUI/CListControl.h
     sdk/libPPUI/CListControlComplete.h
     sdk/libPPUI/CListControlHeaderImpl.h
@@ -465,6 +495,7 @@ set(
     sdk/libPPUI/CListControl_EditImpl.h
     sdk/libPPUI/CListViewCtrlEx.h
     sdk/libPPUI/CMiddleDragImpl.h
+    sdk/libPPUI/CMiddleDragOverlay.h
     sdk/libPPUI/commandline_parser.h
     sdk/libPPUI/Controls.h
     sdk/libPPUI/CPopupTooltipMessage.h
@@ -472,18 +503,23 @@ set(
     sdk/libPPUI/CPropVariant.h
     sdk/libPPUI/CWindowCreateAndDelete.h
     sdk/libPPUI/CDialogResizeHelper.h
+    sdk/libPPUI/DarkMode.h
+    sdk/libPPUI/DarkModeEx.h
+    sdk/libPPUI/gdi-types-portable.h
     sdk/libPPUI/gdiplus-helpers-webp.h
     sdk/libPPUI/gdiplus_helpers.h
     sdk/libPPUI/GDIUtils.h
     sdk/libPPUI/gesture.h
     sdk/libPPUI/IDataObjectUtils.h
+    sdk/libPPUI/ImageEncoder.h
+    sdk/libPPUI/ImplementOnFinalMessage.h
     sdk/libPPUI/InPlaceEdit.h
     sdk/libPPUI/InPlaceEditTable.h
     sdk/libPPUI/link-CommonControls6.h
     sdk/libPPUI/listview_helper.h
     sdk/libPPUI/PaintUtils.h
     sdk/libPPUI/pp-COM-macros.h
-    sdk/libPPUI/ppresources.h
+    sdk/libPPUI/ReStyleWnd.h
     sdk/libPPUI/SmartStrStr.h
     sdk/libPPUI/stdafx.h
     sdk/libPPUI/targetver.h
