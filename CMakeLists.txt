@@ -24,6 +24,7 @@ if(FOO_STATIC_STDLIB)
     endforeach()
 endif()
 
+set(CMAKE_CXX_STANDARD 17)
 set(WINVER 0x0601)
 
 add_definitions(
