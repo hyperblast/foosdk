@@ -9,6 +9,10 @@ build:
 
 configuration: Release
 
+platform:
+- Win32
+- x64
+
 environment:
   BuildFlags: -DFOO_SAMPLE=ON
 
