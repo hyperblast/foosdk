@@ -421,6 +421,7 @@ set(
     sdk/foobar2000/helpers/CSingleThreadWrapper.h
     sdk/foobar2000/helpers/CTableEditHelper-Legacy.h
     sdk/foobar2000/helpers/DarkMode.h
+    sdk/foobar2000/helpers/dsp_dialog.h
     sdk/foobar2000/helpers/duration_counter.h
     sdk/foobar2000/helpers/fb2k_threads.h
     sdk/foobar2000/helpers/fb2k_wfx.h
@@ -462,6 +463,7 @@ set(
     sdk/foobar2000/helpers/meta_table_builder.h
     sdk/foobar2000/helpers/metadb_io_hintlist.h
     sdk/foobar2000/helpers/mp3_utils.h
+    sdk/foobar2000/helpers/notifyList.h
     sdk/foobar2000/helpers/packet_decoder_aac_common.h
     sdk/foobar2000/helpers/packet_decoder_mp3_common.h
     sdk/foobar2000/helpers/playlist_position_reference_tracker.h
