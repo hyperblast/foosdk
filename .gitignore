@@ -1,4 +1,4 @@
-build/*
+build*/*
 sdk/foobar2000/foo_input_validator/*
 wtl/AppWizard/*
 wtl/Samples/*
