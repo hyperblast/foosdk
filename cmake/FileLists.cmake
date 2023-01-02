@@ -244,6 +244,7 @@ set(
     sdk/foobar2000/SDK/http_client.h
     sdk/foobar2000/SDK/icon_remap.h
     sdk/foobar2000/SDK/imageLoaderLite.h
+    sdk/foobar2000/SDK/imageViewer.h
     sdk/foobar2000/SDK/info_lookup_handler.h
     sdk/foobar2000/SDK/initquit.h
     sdk/foobar2000/SDK/input.h
@@ -310,6 +311,7 @@ set(
     sdk/foobar2000/helpers/file_move_helper.cpp
     sdk/foobar2000/helpers/filetimetools.cpp
     sdk/foobar2000/helpers/file_win32_wrapper.cpp
+    sdk/foobar2000/helpers/image_load_save.cpp
     sdk/foobar2000/helpers/inplace_edit.cpp
     sdk/foobar2000/helpers/input_helpers.cpp
     sdk/foobar2000/helpers/input_helper_cue.cpp
@@ -371,6 +373,7 @@ set(
     sdk/foobar2000/helpers/filetimetools.h
     sdk/foobar2000/helpers/helpers.h
     sdk/foobar2000/helpers/icon_remapping_wildcard.h
+    sdk/foobar2000/helpers/image_load_save.h
     sdk/foobar2000/helpers/inplace_edit.h
     sdk/foobar2000/helpers/input_fix_seeking.h
     sdk/foobar2000/helpers/input_helpers.h
@@ -404,6 +407,7 @@ set(
     sdk/foobar2000/helpers/win32_misc.h
     sdk/foobar2000/helpers/WindowPositionUtils.h
     sdk/foobar2000/helpers/window_placement_helper.h
+    sdk/foobar2000/helpers/winmm-types.h
     sdk/foobar2000/helpers/writer_wav.h
 )
 
