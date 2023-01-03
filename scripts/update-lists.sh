@@ -14,7 +14,7 @@ function dump_dir()
 {
     (
         printf '\nset(\n    %s\n' "$1"
-        ls $2 | xargs -n1 --no-run-if-empty printf '    %s\n'
+        ls $2 | grep -viE "$IGNORE$" | xargs -n1 --no-run-if-empty printf '    %s\n'
         printf ')\n'
     ) >> "$out_file"
 }
@@ -37,13 +37,19 @@ write_prologue
 dump_dir WTL_HEADERS    'wtl/Include/*.h'
 dump_dir SHARED_HEADERS 'sdk/foobar2000/shared/*.h'
 
-IGNORE="($IGNORE)|(pfc-fb2k-hooks\\.cpp)|(nix-objects\\.(cpp|h))" dump_vcxproj PFC \
+IGNORE="($IGNORE)|(pfc-fb2k-hooks\\.cpp)|(nix-objects\\.(cpp|h))" \
+    dump_vcxproj PFC \
     sdk/pfc/pfc.vcxproj
 
 dump_vcxproj SDK \
-    sdk/foobar2000/SDK/foobar2000_SDK.vcxproj
+    sdk/foobar2000/SDK/foobar2000_SDK.vcxproj \
+    --skip-headers
 
-IGNORE="($IGNORE)|(TypeFind\\.h)" dump_vcxproj SDK_HELPERS \
+dump_dir SDK_HEADERS \
+    'sdk/foobar2000/SDK/*.h'
+
+IGNORE="($IGNORE)|(TypeFind\\.h)" \
+    dump_vcxproj SDK_HELPERS \
     sdk/foobar2000/helpers/foobar2000_sdk_helpers.vcxproj
 
 dump_vcxproj PPUI \

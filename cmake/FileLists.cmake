@@ -227,12 +227,14 @@ set(
     sdk/foobar2000/SDK/abort_callback.h
     sdk/foobar2000/SDK/advconfig.h
     sdk/foobar2000/SDK/advconfig_impl.h
+    sdk/foobar2000/SDK/advconfig_impl_legacy.h
     sdk/foobar2000/SDK/album_art.h
     sdk/foobar2000/SDK/album_art_helpers.h
     sdk/foobar2000/SDK/app_close_blocker.h
     sdk/foobar2000/SDK/archive.h
     sdk/foobar2000/SDK/audio_chunk.h
     sdk/foobar2000/SDK/audio_chunk_impl.h
+    sdk/foobar2000/SDK/audioEncoder.h
     sdk/foobar2000/SDK/audio_postprocessor.h
     sdk/foobar2000/SDK/autoplaylist.h
     sdk/foobar2000/SDK/cfg_var.h
@@ -241,46 +243,49 @@ set(
     sdk/foobar2000/SDK/commandline.h
     sdk/foobar2000/SDK/commonObjects.h
     sdk/foobar2000/SDK/completion_notify.h
+    sdk/foobar2000/SDK/component_client.h
     sdk/foobar2000/SDK/component.h
+    sdk/foobar2000/SDK/components_menu.h
     sdk/foobar2000/SDK/componentversion.h
     sdk/foobar2000/SDK/configCache.h
-    sdk/foobar2000/SDK/configStore.h
     sdk/foobar2000/SDK/config_io_callback.h
     sdk/foobar2000/SDK/config_object.h
     sdk/foobar2000/SDK/config_object_impl.h
+    sdk/foobar2000/SDK/configStore.h
     sdk/foobar2000/SDK/console.h
     sdk/foobar2000/SDK/console_manager.h
     sdk/foobar2000/SDK/contextmenu.h
     sdk/foobar2000/SDK/contextmenu_manager.h
-    sdk/foobar2000/SDK/coreDarkMode.h
     sdk/foobar2000/SDK/core_api.h
+    sdk/foobar2000/SDK/coreDarkMode.h
     sdk/foobar2000/SDK/coreversion.h
     sdk/foobar2000/SDK/decode_postprocessor.h
+    sdk/foobar2000/SDK/dsp-frontend.h
     sdk/foobar2000/SDK/dsp.h
     sdk/foobar2000/SDK/dsp_manager.h
     sdk/foobar2000/SDK/event_logger.h
-    sdk/foobar2000/SDK/exceptions.h
     sdk/foobar2000/SDK/exception_io.h
-    sdk/foobar2000/SDK/file.h
+    sdk/foobar2000/SDK/exceptions.h
     sdk/foobar2000/SDK/fileDialog.h
-    sdk/foobar2000/SDK/filesystem_transacted.h
     sdk/foobar2000/SDK/file_format_sanitizer.h
-    sdk/foobar2000/SDK/file_info.h
+    sdk/foobar2000/SDK/file.h
     sdk/foobar2000/SDK/file_info_const_impl.h
     sdk/foobar2000/SDK/file_info_filter.h
     sdk/foobar2000/SDK/file_info_filter_impl.h
+    sdk/foobar2000/SDK/file_info.h
     sdk/foobar2000/SDK/file_info_impl.h
     sdk/foobar2000/SDK/file_lock_manager.h
     sdk/foobar2000/SDK/file_operation_callback.h
     sdk/foobar2000/SDK/filesystem.h
     sdk/foobar2000/SDK/filesystem_helper.h
+    sdk/foobar2000/SDK/filesystem_transacted.h
     sdk/foobar2000/SDK/foobar2000-all.h
+    sdk/foobar2000/SDK/foobar2000.h
     sdk/foobar2000/SDK/foobar2000-lite.h
     sdk/foobar2000/SDK/foobar2000-pfc.h
     sdk/foobar2000/SDK/foobar2000-sdk-pch.h
     sdk/foobar2000/SDK/foobar2000-versions.h
     sdk/foobar2000/SDK/foobar2000-winver.h
-    sdk/foobar2000/SDK/foobar2000.h
     sdk/foobar2000/SDK/foosort.h
     sdk/foobar2000/SDK/foosortstring.h
     sdk/foobar2000/SDK/forward_types.h
@@ -294,23 +299,25 @@ set(
     sdk/foobar2000/SDK/imageViewer.h
     sdk/foobar2000/SDK/info_lookup_handler.h
     sdk/foobar2000/SDK/initquit.h
-    sdk/foobar2000/SDK/input.h
     sdk/foobar2000/SDK/input_file_type.h
+    sdk/foobar2000/SDK/input.h
     sdk/foobar2000/SDK/input_impl.h
+    sdk/foobar2000/SDK/keyValueIO.h
+    sdk/foobar2000/SDK/keyValueIOimpl.h
     sdk/foobar2000/SDK/library_callbacks.h
     sdk/foobar2000/SDK/library_index.h
     sdk/foobar2000/SDK/library_manager.h
     sdk/foobar2000/SDK/link_resolver.h
     sdk/foobar2000/SDK/main_thread_callback.h
     sdk/foobar2000/SDK/mem_block_container.h
-    sdk/foobar2000/SDK/menu.h
     sdk/foobar2000/SDK/menu_common.h
+    sdk/foobar2000/SDK/menu.h
     sdk/foobar2000/SDK/menu_helpers.h
     sdk/foobar2000/SDK/messageBox.h
     sdk/foobar2000/SDK/message_loop.h
-    sdk/foobar2000/SDK/metadb.h
     sdk/foobar2000/SDK/metadb_callbacks.h
     sdk/foobar2000/SDK/metadb_display_field_provider.h
+    sdk/foobar2000/SDK/metadb.h
     sdk/foobar2000/SDK/metadb_handle.h
     sdk/foobar2000/SDK/metadb_index.h
     sdk/foobar2000/SDK/metadb_info_container_impl.h
@@ -319,11 +326,11 @@ set(
     sdk/foobar2000/SDK/ole_interaction.h
     sdk/foobar2000/SDK/output.h
     sdk/foobar2000/SDK/packet_decoder.h
-    sdk/foobar2000/SDK/playlistColumnProvider.h
-    sdk/foobar2000/SDK/play_callback.h
     sdk/foobar2000/SDK/playable_location.h
     sdk/foobar2000/SDK/playback_control.h
     sdk/foobar2000/SDK/playback_stream_capture.h
+    sdk/foobar2000/SDK/play_callback.h
+    sdk/foobar2000/SDK/playlistColumnProvider.h
     sdk/foobar2000/SDK/playlist.h
     sdk/foobar2000/SDK/playlist_loader.h
     sdk/foobar2000/SDK/popup_message.h
@@ -334,10 +341,11 @@ set(
     sdk/foobar2000/SDK/replaygain_scanner.h
     sdk/foobar2000/SDK/resampler.h
     sdk/foobar2000/SDK/search_tools.h
-    sdk/foobar2000/SDK/service.h
     sdk/foobar2000/SDK/service_by_guid.h
     sdk/foobar2000/SDK/service_compat.h
+    sdk/foobar2000/SDK/service.h
     sdk/foobar2000/SDK/service_impl.h
+    sdk/foobar2000/SDK/shortcut_actions.h
     sdk/foobar2000/SDK/system_time_keeper.h
     sdk/foobar2000/SDK/tag_processor.h
     sdk/foobar2000/SDK/threaded_process.h
@@ -346,12 +354,12 @@ set(
     sdk/foobar2000/SDK/timer.h
     sdk/foobar2000/SDK/titleformat.h
     sdk/foobar2000/SDK/toolbarDropDown.h
-    sdk/foobar2000/SDK/tracks.h
     sdk/foobar2000/SDK/track_property.h
-    sdk/foobar2000/SDK/ui.h
+    sdk/foobar2000/SDK/tracks.h
     sdk/foobar2000/SDK/ui_edit_context.h
     sdk/foobar2000/SDK/ui_element.h
     sdk/foobar2000/SDK/ui_element_typable_window_manager.h
+    sdk/foobar2000/SDK/ui.h
     sdk/foobar2000/SDK/unpack.h
     sdk/foobar2000/SDK/vis.h
 )
