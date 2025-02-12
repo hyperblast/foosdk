@@ -572,6 +572,7 @@ set(
     sdk/libPPUI/CPropVariant.h
     sdk/libPPUI/CWindowCreateAndDelete.h
     sdk/libPPUI/CDialogResizeHelper.h
+    sdk/libPPUI/DarkMode-CHyperLink.h
     sdk/libPPUI/DarkMode.h
     sdk/libPPUI/DarkModeEx.h
     sdk/libPPUI/gdi-types-portable.h
