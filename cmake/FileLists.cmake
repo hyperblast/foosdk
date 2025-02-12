@@ -237,6 +237,7 @@ set(
     sdk/foobar2000/SDK/audioEncoder.h
     sdk/foobar2000/SDK/audio_postprocessor.h
     sdk/foobar2000/SDK/autoplaylist.h
+    sdk/foobar2000/SDK/callback_merit.h
     sdk/foobar2000/SDK/cfg_var.h
     sdk/foobar2000/SDK/cfg_var_legacy.h
     sdk/foobar2000/SDK/chapterizer.h
@@ -418,6 +419,7 @@ set(
     sdk/foobar2000/helpers/audio_render_float.h
     sdk/foobar2000/helpers/AutoComplete.h
     sdk/foobar2000/helpers/BumpableElem.h
+    sdk/foobar2000/helpers/callback_merit.h
     sdk/foobar2000/helpers/CDialogResizeHelper.h
     sdk/foobar2000/helpers/cfg_dsp_chain_config.h
     sdk/foobar2000/helpers/cfg_obj.h
@@ -431,6 +433,7 @@ set(
     sdk/foobar2000/helpers/DarkMode.h
     sdk/foobar2000/helpers/dsp_dialog.h
     sdk/foobar2000/helpers/duration_counter.h
+    sdk/foobar2000/helpers/fb2kWorkerTool.h
     sdk/foobar2000/helpers/fb2k_threads.h
     sdk/foobar2000/helpers/fb2k_wfx.h
     sdk/foobar2000/helpers/fileReadAhead.h
@@ -479,6 +482,7 @@ set(
     sdk/foobar2000/helpers/ProfileCache.h
     sdk/foobar2000/helpers/readers.h
     sdk/foobar2000/helpers/reader_pretend_nonseekable.h
+    sdk/foobar2000/helpers/readWriteLock.h
     sdk/foobar2000/helpers/rethrow.h
     sdk/foobar2000/helpers/seekabilizer.h
     sdk/foobar2000/helpers/StdAfx.h
