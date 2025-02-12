@@ -420,6 +420,7 @@ set(
     sdk/foobar2000/helpers/AutoComplete.h
     sdk/foobar2000/helpers/BumpableElem.h
     sdk/foobar2000/helpers/callback_merit.h
+    sdk/foobar2000/helpers/callInMainThreadHelper.h
     sdk/foobar2000/helpers/CDialogResizeHelper.h
     sdk/foobar2000/helpers/cfg_dsp_chain_config.h
     sdk/foobar2000/helpers/cfg_obj.h
@@ -522,6 +523,7 @@ set(
     sdk/libPPUI/CDialogResizeHelper.cpp
     sdk/libPPUI/CPowerRequest.cpp
     sdk/libPPUI/DarkMode.cpp
+    sdk/libPPUI/EditBoxFix.cpp
     sdk/libPPUI/gdiplus_helpers.cpp
     sdk/libPPUI/GDIUtils.cpp
     sdk/libPPUI/IDataObjectUtils.cpp
@@ -575,6 +577,7 @@ set(
     sdk/libPPUI/DarkMode-CHyperLink.h
     sdk/libPPUI/DarkMode.h
     sdk/libPPUI/DarkModeEx.h
+    sdk/libPPUI/EditBoxFixes.h
     sdk/libPPUI/gdi-types-portable.h
     sdk/libPPUI/gdiplus-helpers-webp.h
     sdk/libPPUI/gdiplus_helpers.h
