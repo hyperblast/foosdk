@@ -13,7 +13,7 @@ option(FOO_SYSTEM_WTL       "Use system WTL library" OFF)
 option(FOO_SAMPLE           "Build foo_sample component" OFF)
 
 set(CMAKE_MODULE_PATH   "${CMAKE_CURRENT_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH}")
-set(CMAKE_CXX_FLAGS     "${CMAKE_CXX_FLAGS} /wd4302 /wd4838 /wd4996 /d2notypeopt")
+set(CMAKE_CXX_FLAGS     "${CMAKE_CXX_FLAGS} /MP /wd4302 /wd4838 /wd4996 /d2notypeopt")
 
 if(FOO_STATIC_STDLIB)
     foreach(FLAGS CMAKE_CXX_FLAGS_DEBUG
