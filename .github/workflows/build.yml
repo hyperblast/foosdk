@@ -1,0 +1,48 @@
+name: build
+
+on:
+
+  push:
+    branches:
+    - master
+
+  pull_request:
+    branches:
+    - master
+
+jobs:
+
+  build:
+
+    runs-on: windows-2022
+
+    defaults:
+      run:
+        shell: cmd
+
+    strategy:
+      matrix:
+        arch:
+        - Win32
+        - x64
+
+    steps:
+    - name: Set git to use LF
+      run: |
+        git config --global core.autocrlf false
+        git config --global core.eol lf
+
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup MSVC
+      uses: ilammy/msvc-dev-cmd@v1
+      with:
+        arch: ${{ matrix.arch }}
+
+    - name: Build
+      run: |
+        mkdir build
+        cd build
+        cmake -A ${{ matrix.arch }} -DFOO_SAMPLE=ON ..
+        msbuild -v:m -p:Configuration=Release -p:Platform=${{ matrix.arch }} foosdk.sln

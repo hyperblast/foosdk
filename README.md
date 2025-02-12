@@ -1,7 +1,7 @@
 # foosdk
 Foobar2000 SDK with CMake-based build system and few improvements.
 
-[![Build Status](https://ci.appveyor.com/api/projects/status/github/hyperblast/foosdk?branch=master&svg=true)](https://ci.appveyor.com/project/hyperblast/foosdk)
+[![Build Status](https://github.com/hyperblast/foosdk/actions/workflows/build.yml/badge.svg)](https://github.com/hyperblast/foosdk/actions/workflows/build.yml)
 
 ### Features
 - CMake-based build system
