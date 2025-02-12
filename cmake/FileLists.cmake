@@ -438,7 +438,6 @@ set(
     sdk/foobar2000/helpers/fb2k_threads.h
     sdk/foobar2000/helpers/fb2k_wfx.h
     sdk/foobar2000/helpers/fileReadAhead.h
-    sdk/foobar2000/helpers/file_readonly.h
     sdk/foobar2000/helpers/foobar2000+atl.h
     sdk/foobar2000/helpers/foobar2000-lite+atl.h
     sdk/foobar2000/helpers/fullFileBuffer.h
@@ -482,6 +481,7 @@ set(
     sdk/foobar2000/helpers/ProcessUtils.h
     sdk/foobar2000/helpers/ProfileCache.h
     sdk/foobar2000/helpers/readers.h
+    sdk/foobar2000/helpers/readers_lite.h
     sdk/foobar2000/helpers/reader_pretend_nonseekable.h
     sdk/foobar2000/helpers/readWriteLock.h
     sdk/foobar2000/helpers/rethrow.h
@@ -536,6 +536,7 @@ set(
     sdk/libPPUI/TypeFind.cpp
     sdk/libPPUI/win32_op.cpp
     sdk/libPPUI/win32_utility.cpp
+    sdk/libPPUI/wtl-pp.cpp
 )
 
 set(
