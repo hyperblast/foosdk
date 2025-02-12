@@ -47,6 +47,7 @@ set(
     sdk/pfc/cpuid.cpp
     sdk/pfc/crashWithMessage.cpp
     sdk/pfc/filehandle.cpp
+    sdk/pfc/filetimetools.cpp
     sdk/pfc/guid.cpp
     sdk/pfc/other.cpp
     sdk/pfc/pathUtils.cpp
@@ -92,6 +93,7 @@ set(
     sdk/pfc/debug.h
     sdk/pfc/event.h
     sdk/pfc/filehandle.h
+    sdk/pfc/filetimetools.h
     sdk/pfc/fixed_map.h
     sdk/pfc/fpu.h
     sdk/pfc/guid.h
@@ -126,6 +128,7 @@ set(
     sdk/pfc/SmartStrStr-twoCharMappings.h
     sdk/pfc/SmartStrStr.h
     sdk/pfc/sort.h
+    sdk/pfc/sort2.h
     sdk/pfc/splitString.h
     sdk/pfc/splitString2.h
     sdk/pfc/stdsort.h
@@ -242,6 +245,7 @@ set(
     sdk/foobar2000/SDK/cfg_var_legacy.h
     sdk/foobar2000/SDK/chapterizer.h
     sdk/foobar2000/SDK/commandline.h
+    sdk/foobar2000/SDK/commonObjects-Apple.h
     sdk/foobar2000/SDK/commonObjects.h
     sdk/foobar2000/SDK/completion_notify.h
     sdk/foobar2000/SDK/component_client.h
@@ -438,6 +442,7 @@ set(
     sdk/foobar2000/helpers/fb2k_threads.h
     sdk/foobar2000/helpers/fb2k_wfx.h
     sdk/foobar2000/helpers/fileReadAhead.h
+    sdk/foobar2000/helpers/file_streamstub.h
     sdk/foobar2000/helpers/foobar2000+atl.h
     sdk/foobar2000/helpers/foobar2000-lite+atl.h
     sdk/foobar2000/helpers/fullFileBuffer.h
@@ -585,6 +590,7 @@ set(
     sdk/libPPUI/GDIUtils.h
     sdk/libPPUI/gesture.h
     sdk/libPPUI/hookWindowMessages.h
+    sdk/libPPUI/HyperLinkCtrl.h
     sdk/libPPUI/IDataObjectUtils.h
     sdk/libPPUI/ImageEncoder.h
     sdk/libPPUI/ImplementOnFinalMessage.h
@@ -615,7 +621,7 @@ set(
     SAMPLE_SOURCES
     sdk/foobar2000/foo_sample/contextmenu.cpp
     sdk/foobar2000/foo_sample/decode.cpp
-    sdk/foobar2000/foo_sample/dsp.cpp
+    sdk/foobar2000/foo_sample/dsp_sample.cpp
     sdk/foobar2000/foo_sample/initquit.cpp
     sdk/foobar2000/foo_sample/input_raw.cpp
     sdk/foobar2000/foo_sample/listcontrol-advanced.cpp
@@ -637,6 +643,7 @@ set(
 
 set(
     SAMPLE_HEADERS
+    sdk/foobar2000/foo_sample/dsp_sample.h
     sdk/foobar2000/foo_sample/playback_stream_capture.h
     sdk/foobar2000/foo_sample/resource.h
     sdk/foobar2000/foo_sample/stdafx.h
