@@ -92,6 +92,7 @@ set(
     sdk/pfc/cpuid.h
     sdk/pfc/debug.h
     sdk/pfc/event.h
+    sdk/pfc/event_std.h
     sdk/pfc/filehandle.h
     sdk/pfc/filetimetools.h
     sdk/pfc/fixed_map.h
@@ -129,6 +130,7 @@ set(
     sdk/pfc/SmartStrStr.h
     sdk/pfc/sort.h
     sdk/pfc/sort2.h
+    sdk/pfc/sortstring.h
     sdk/pfc/splitString.h
     sdk/pfc/splitString2.h
     sdk/pfc/stdsort.h
@@ -187,7 +189,6 @@ set(
     sdk/foobar2000/SDK/filesystem.cpp
     sdk/foobar2000/SDK/filesystem_helper.cpp
     sdk/foobar2000/SDK/foosort.cpp
-    sdk/foobar2000/SDK/foosortstring.cpp
     sdk/foobar2000/SDK/fsItem.cpp
     sdk/foobar2000/SDK/guids.cpp
     sdk/foobar2000/SDK/hasher_md5.cpp
@@ -358,6 +359,7 @@ set(
     sdk/foobar2000/SDK/threadsLite.h
     sdk/foobar2000/SDK/timer.h
     sdk/foobar2000/SDK/titleformat.h
+    sdk/foobar2000/SDK/titleformat_object.h
     sdk/foobar2000/SDK/toolbarDropDown.h
     sdk/foobar2000/SDK/track_property.h
     sdk/foobar2000/SDK/tracks.h
@@ -432,6 +434,7 @@ set(
     sdk/foobar2000/helpers/cfg_var_import.h
     sdk/foobar2000/helpers/CListControlFb2kColors.h
     sdk/foobar2000/helpers/CmdThread.h
+    sdk/foobar2000/helpers/CModelessDialogMessages.h
     sdk/foobar2000/helpers/CPropVariant.h
     sdk/foobar2000/helpers/CSingleThreadWrapper.h
     sdk/foobar2000/helpers/CTableEditHelper-Legacy.h
