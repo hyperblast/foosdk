@@ -24,8 +24,7 @@ fi
 function write_nodes()
 {
     xmlstarlet sel -N x="$xmlns" -t -v "$1" "$project_file" | \
-    xargs -n1 --no-run-if-empty printf '%s%s\n' "$path_prefix" | \
-    LC_ALL=C sort
+    xargs -n1 --no-run-if-empty printf '%s%s\n' "$path_prefix"
 }
 
 test -f "$project_file"
