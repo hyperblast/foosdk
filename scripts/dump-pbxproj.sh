@@ -5,7 +5,7 @@ set -e
 project_dir=$1
 
 if [ -z "$project_dir" ]; then
-    echo "usage: $(basename $0) dir.xcodeproj"
+    echo "usage: $(basename $0) dir.xcodeproj [source_dir...]"
     exit 1
 fi
 

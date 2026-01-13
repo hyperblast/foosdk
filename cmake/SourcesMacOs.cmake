@@ -512,6 +512,19 @@ set(
     sdk/foobar2000/foo_sample/foobar2000-mac-class-suffix.h
     sdk/foobar2000/foo_sample/playback_stream_capture.h
     sdk/foobar2000/foo_sample/resource.h
+    sdk/foobar2000/helpers-mac/CFObject.h
+    sdk/foobar2000/helpers-mac/NSComboBox+fb2k.h
+    sdk/foobar2000/helpers-mac/NSEvent+ppstuff.h
+    sdk/foobar2000/helpers-mac/NSFont+pp.h
+    sdk/foobar2000/helpers-mac/NSMenu+ppaddons.h
+    sdk/foobar2000/helpers-mac/NSView+embed.h
+    sdk/foobar2000/helpers-mac/NSView+ppsubviews.h
+    sdk/foobar2000/helpers-mac/fb2k-platform.h
+    sdk/foobar2000/helpers-mac/fooDecibelFormatter.h
+    sdk/foobar2000/helpers-mac/fooPreferencesCommon.h
+    sdk/foobar2000/helpers-mac/fooTimeFormatter.h
+    sdk/foobar2000/helpers-mac/fooWindowWithCancel.h
+    sdk/foobar2000/helpers-mac/foobar2000-mac-helpers.h
 )
 
 set(
