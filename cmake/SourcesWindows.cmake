@@ -36,40 +36,6 @@ set(
 )
 
 set(
-    PFC_SOURCES
-    sdk/pfc/audio_math.cpp
-    sdk/pfc/audio_sample.cpp
-    sdk/pfc/base64.cpp
-    sdk/pfc/bigmem.cpp
-    sdk/pfc/bit_array.cpp
-    sdk/pfc/bsearch.cpp
-    sdk/pfc/charDownConvert.cpp
-    sdk/pfc/cpuid.cpp
-    sdk/pfc/crashWithMessage.cpp
-    sdk/pfc/filehandle.cpp
-    sdk/pfc/filetimetools.cpp
-    sdk/pfc/guid.cpp
-    sdk/pfc/other.cpp
-    sdk/pfc/pathUtils.cpp
-    sdk/pfc/printf.cpp
-    sdk/pfc/selftest.cpp
-    sdk/pfc/SmartStrStr.cpp
-    sdk/pfc/sort.cpp
-    sdk/pfc/splitString2.cpp
-    sdk/pfc/string-compare.cpp
-    sdk/pfc/string-conv-lite.cpp
-    sdk/pfc/string-lite.cpp
-    sdk/pfc/string_base.cpp
-    sdk/pfc/string_conv.cpp
-    sdk/pfc/threads.cpp
-    sdk/pfc/timers.cpp
-    sdk/pfc/unicode-normalize.cpp
-    sdk/pfc/utf8.cpp
-    sdk/pfc/wildcard.cpp
-    sdk/pfc/win-objects.cpp
-)
-
-set(
     PFC_HEADERS
     sdk/pfc/alloc.h
     sdk/pfc/array.h
@@ -85,6 +51,7 @@ set(
     sdk/pfc/bsearch.h
     sdk/pfc/bsearch_inline.h
     sdk/pfc/byte_order.h
+    sdk/pfc/CFObject.h
     sdk/pfc/chain_list_v2.h
     sdk/pfc/charDownConvert.h
     sdk/pfc/cmd_thread.h
@@ -112,9 +79,8 @@ set(
     sdk/pfc/order_helper.h
     sdk/pfc/other.h
     sdk/pfc/pathUtils.h
-    sdk/pfc/pfc-fb2k-hooks.h
-    sdk/pfc/pfc-lite.h
     sdk/pfc/pfc.h
+    sdk/pfc/pfc-lite.h
     sdk/pfc/platform-objects.h
     sdk/pfc/pocket_char_ops.h
     sdk/pfc/pool.h
@@ -125,23 +91,23 @@ set(
     sdk/pfc/ptr_list.h
     sdk/pfc/rcptr.h
     sdk/pfc/ref_counter.h
+    sdk/pfc/SmartStrStr.h
     sdk/pfc/SmartStrStr-table.h
     sdk/pfc/SmartStrStr-twoCharMappings.h
-    sdk/pfc/SmartStrStr.h
-    sdk/pfc/sort.h
     sdk/pfc/sort2.h
+    sdk/pfc/sort.h
     sdk/pfc/sortstring.h
-    sdk/pfc/splitString.h
     sdk/pfc/splitString2.h
+    sdk/pfc/splitString.h
     sdk/pfc/stdsort.h
+    sdk/pfc/string_base.h
     sdk/pfc/string-compare.h
+    sdk/pfc/string_conv.h
     sdk/pfc/string-conv-lite.h
     sdk/pfc/string-interface.h
+    sdk/pfc/string_list.h
     sdk/pfc/string-lite.h
     sdk/pfc/string-part.h
-    sdk/pfc/string_base.h
-    sdk/pfc/string_conv.h
-    sdk/pfc/string_list.h
     sdk/pfc/string_simple.h
     sdk/pfc/suppress_fb2k_hooks.h
     sdk/pfc/syncd_storage.h
@@ -149,6 +115,7 @@ set(
     sdk/pfc/synchro_nix.h
     sdk/pfc/synchro_win.h
     sdk/pfc/targetver.h
+    sdk/pfc/threadSafeObj.h
     sdk/pfc/threads.h
     sdk/pfc/timers.h
     sdk/pfc/traits.h
@@ -160,70 +127,37 @@ set(
 )
 
 set(
-    SDK_SOURCES
-    sdk/foobar2000/SDK/abort_callback.cpp
-    sdk/foobar2000/SDK/advconfig.cpp
-    sdk/foobar2000/SDK/album_art.cpp
-    sdk/foobar2000/SDK/app_close_blocker.cpp
-    sdk/foobar2000/SDK/audio_chunk.cpp
-    sdk/foobar2000/SDK/audio_chunk_channel_config.cpp
-    sdk/foobar2000/SDK/cfg_var.cpp
-    sdk/foobar2000/SDK/cfg_var_legacy.cpp
-    sdk/foobar2000/SDK/chapterizer.cpp
-    sdk/foobar2000/SDK/commandline.cpp
-    sdk/foobar2000/SDK/commonObjects.cpp
-    sdk/foobar2000/SDK/completion_notify.cpp
-    sdk/foobar2000/SDK/componentversion.cpp
-    sdk/foobar2000/SDK/configStore.cpp
-    sdk/foobar2000/SDK/config_io_callback.cpp
-    sdk/foobar2000/SDK/config_object.cpp
-    sdk/foobar2000/SDK/console.cpp
-    sdk/foobar2000/SDK/dsp.cpp
-    sdk/foobar2000/SDK/dsp_manager.cpp
-    sdk/foobar2000/SDK/file_cached_impl.cpp
-    sdk/foobar2000/SDK/file_info.cpp
-    sdk/foobar2000/SDK/file_info_const_impl.cpp
-    sdk/foobar2000/SDK/file_info_impl.cpp
-    sdk/foobar2000/SDK/file_info_merge.cpp
-    sdk/foobar2000/SDK/file_operation_callback.cpp
-    sdk/foobar2000/SDK/filesystem.cpp
-    sdk/foobar2000/SDK/filesystem_helper.cpp
-    sdk/foobar2000/SDK/foosort.cpp
-    sdk/foobar2000/SDK/fsItem.cpp
-    sdk/foobar2000/SDK/guids.cpp
-    sdk/foobar2000/SDK/hasher_md5.cpp
-    sdk/foobar2000/SDK/image.cpp
-    sdk/foobar2000/SDK/input.cpp
-    sdk/foobar2000/SDK/input_file_type.cpp
-    sdk/foobar2000/SDK/link_resolver.cpp
-    sdk/foobar2000/SDK/mainmenu.cpp
-    sdk/foobar2000/SDK/main_thread_callback.cpp
-    sdk/foobar2000/SDK/mem_block_container.cpp
-    sdk/foobar2000/SDK/menu_helpers.cpp
-    sdk/foobar2000/SDK/menu_item.cpp
-    sdk/foobar2000/SDK/menu_manager.cpp
-    sdk/foobar2000/SDK/metadb.cpp
-    sdk/foobar2000/SDK/metadb_handle.cpp
-    sdk/foobar2000/SDK/metadb_handle_list.cpp
-    sdk/foobar2000/SDK/output.cpp
-    sdk/foobar2000/SDK/packet_decoder.cpp
-    sdk/foobar2000/SDK/playable_location.cpp
-    sdk/foobar2000/SDK/playback_control.cpp
-    sdk/foobar2000/SDK/playlist.cpp
-    sdk/foobar2000/SDK/playlist_loader.cpp
-    sdk/foobar2000/SDK/popup_message.cpp
-    sdk/foobar2000/SDK/preferences_page.cpp
-    sdk/foobar2000/SDK/replaygain.cpp
-    sdk/foobar2000/SDK/replaygain_info.cpp
-    sdk/foobar2000/SDK/service.cpp
-    sdk/foobar2000/SDK/tag_processor.cpp
-    sdk/foobar2000/SDK/tag_processor_id3v2.cpp
-    sdk/foobar2000/SDK/threaded_process.cpp
-    sdk/foobar2000/SDK/titleformat.cpp
-    sdk/foobar2000/SDK/track_property.cpp
-    sdk/foobar2000/SDK/ui.cpp
-    sdk/foobar2000/SDK/ui_element.cpp
-    sdk/foobar2000/SDK/utility.cpp
+    PFC_SOURCES
+    sdk/pfc/SmartStrStr.cpp
+    sdk/pfc/audio_math.cpp
+    sdk/pfc/audio_sample.cpp
+    sdk/pfc/base64.cpp
+    sdk/pfc/bigmem.cpp
+    sdk/pfc/bit_array.cpp
+    sdk/pfc/bsearch.cpp
+    sdk/pfc/charDownConvert.cpp
+    sdk/pfc/cpuid.cpp
+    sdk/pfc/crashWithMessage.cpp
+    sdk/pfc/filehandle.cpp
+    sdk/pfc/filetimetools.cpp
+    sdk/pfc/guid.cpp
+    sdk/pfc/other.cpp
+    sdk/pfc/pathUtils.cpp
+    sdk/pfc/printf.cpp
+    sdk/pfc/selftest.cpp
+    sdk/pfc/sort.cpp
+    sdk/pfc/splitString2.cpp
+    sdk/pfc/string-compare.cpp
+    sdk/pfc/string-conv-lite.cpp
+    sdk/pfc/string-lite.cpp
+    sdk/pfc/string_base.cpp
+    sdk/pfc/string_conv.cpp
+    sdk/pfc/threads.cpp
+    sdk/pfc/timers.cpp
+    sdk/pfc/unicode-normalize.cpp
+    sdk/pfc/utf8.cpp
+    sdk/pfc/wildcard.cpp
+    sdk/pfc/win-objects.cpp
 )
 
 set(
@@ -373,115 +307,139 @@ set(
 )
 
 set(
-    SDK_HELPERS_SOURCES
-    sdk/foobar2000/helpers/album_art_helpers.cpp
-    sdk/foobar2000/helpers/AutoComplete.cpp
-    sdk/foobar2000/helpers/cfg_guidlist.cpp
-    sdk/foobar2000/helpers/cfg_var_import.cpp
-    sdk/foobar2000/helpers/create_directory_helper.cpp
-    sdk/foobar2000/helpers/CTableEditHelper-Legacy.cpp
-    sdk/foobar2000/helpers/cue_creator.cpp
-    sdk/foobar2000/helpers/cue_parser.cpp
-    sdk/foobar2000/helpers/cue_parser_embedding.cpp
-    sdk/foobar2000/helpers/cuesheet_index_list.cpp
-    sdk/foobar2000/helpers/DarkMode.cpp
-    sdk/foobar2000/helpers/dialog_resize_helper.cpp
-    sdk/foobar2000/helpers/dropdown_helper.cpp
-    sdk/foobar2000/helpers/dynamic_bitrate_helper.cpp
-    sdk/foobar2000/helpers/file_list_helper.cpp
-    sdk/foobar2000/helpers/file_move_helper.cpp
-    sdk/foobar2000/helpers/filetimetools.cpp
-    sdk/foobar2000/helpers/file_win32_wrapper.cpp
-    sdk/foobar2000/helpers/image_load_save.cpp
-    sdk/foobar2000/helpers/inplace_edit.cpp
-    sdk/foobar2000/helpers/input_helpers.cpp
-    sdk/foobar2000/helpers/input_helper_cue.cpp
-    sdk/foobar2000/helpers/mp3_utils.cpp
-    sdk/foobar2000/helpers/packet_decoder_aac_common.cpp
-    sdk/foobar2000/helpers/packet_decoder_mp3_common.cpp
-    sdk/foobar2000/helpers/readers.cpp
-    sdk/foobar2000/helpers/seekabilizer.cpp
-    sdk/foobar2000/helpers/stream_buffer_helper.cpp
-    sdk/foobar2000/helpers/text_file_loader.cpp
-    sdk/foobar2000/helpers/text_file_loader_v2.cpp
-    sdk/foobar2000/helpers/ThreadUtils.cpp
-    sdk/foobar2000/helpers/track_property_callback_impl.cpp
-    sdk/foobar2000/helpers/ui_element_helpers.cpp
-    sdk/foobar2000/helpers/VisUtils.cpp
-    sdk/foobar2000/helpers/VolumeMap.cpp
-    sdk/foobar2000/helpers/win-systemtime.cpp
-    sdk/foobar2000/helpers/win32_dialog.cpp
-    sdk/foobar2000/helpers/win32_misc.cpp
-    sdk/foobar2000/helpers/WindowPositionUtils.cpp
-    sdk/foobar2000/helpers/window_placement_helper.cpp
-    sdk/foobar2000/helpers/writer_wav.cpp
+    SDK_SOURCES
+    sdk/foobar2000/SDK/abort_callback.cpp
+    sdk/foobar2000/SDK/advconfig.cpp
+    sdk/foobar2000/SDK/album_art.cpp
+    sdk/foobar2000/SDK/app_close_blocker.cpp
+    sdk/foobar2000/SDK/audio_chunk.cpp
+    sdk/foobar2000/SDK/audio_chunk_channel_config.cpp
+    sdk/foobar2000/SDK/cfg_var.cpp
+    sdk/foobar2000/SDK/cfg_var_legacy.cpp
+    sdk/foobar2000/SDK/chapterizer.cpp
+    sdk/foobar2000/SDK/commandline.cpp
+    sdk/foobar2000/SDK/commonObjects.cpp
+    sdk/foobar2000/SDK/completion_notify.cpp
+    sdk/foobar2000/SDK/componentversion.cpp
+    sdk/foobar2000/SDK/configStore.cpp
+    sdk/foobar2000/SDK/config_io_callback.cpp
+    sdk/foobar2000/SDK/config_object.cpp
+    sdk/foobar2000/SDK/console.cpp
+    sdk/foobar2000/SDK/dsp.cpp
+    sdk/foobar2000/SDK/dsp_manager.cpp
+    sdk/foobar2000/SDK/file_cached_impl.cpp
+    sdk/foobar2000/SDK/file_info.cpp
+    sdk/foobar2000/SDK/file_info_const_impl.cpp
+    sdk/foobar2000/SDK/file_info_impl.cpp
+    sdk/foobar2000/SDK/file_info_merge.cpp
+    sdk/foobar2000/SDK/file_operation_callback.cpp
+    sdk/foobar2000/SDK/filesystem.cpp
+    sdk/foobar2000/SDK/filesystem_helper.cpp
+    sdk/foobar2000/SDK/foosort.cpp
+    sdk/foobar2000/SDK/fsItem.cpp
+    sdk/foobar2000/SDK/guids.cpp
+    sdk/foobar2000/SDK/hasher_md5.cpp
+    sdk/foobar2000/SDK/image.cpp
+    sdk/foobar2000/SDK/input.cpp
+    sdk/foobar2000/SDK/input_file_type.cpp
+    sdk/foobar2000/SDK/link_resolver.cpp
+    sdk/foobar2000/SDK/main_thread_callback.cpp
+    sdk/foobar2000/SDK/mainmenu.cpp
+    sdk/foobar2000/SDK/mem_block_container.cpp
+    sdk/foobar2000/SDK/menu_helpers.cpp
+    sdk/foobar2000/SDK/menu_item.cpp
+    sdk/foobar2000/SDK/menu_manager.cpp
+    sdk/foobar2000/SDK/metadb.cpp
+    sdk/foobar2000/SDK/metadb_handle.cpp
+    sdk/foobar2000/SDK/metadb_handle_list.cpp
+    sdk/foobar2000/SDK/output.cpp
+    sdk/foobar2000/SDK/packet_decoder.cpp
+    sdk/foobar2000/SDK/playable_location.cpp
+    sdk/foobar2000/SDK/playback_control.cpp
+    sdk/foobar2000/SDK/playlist.cpp
+    sdk/foobar2000/SDK/playlist_loader.cpp
+    sdk/foobar2000/SDK/popup_message.cpp
+    sdk/foobar2000/SDK/preferences_page.cpp
+    sdk/foobar2000/SDK/replaygain.cpp
+    sdk/foobar2000/SDK/replaygain_info.cpp
+    sdk/foobar2000/SDK/service.cpp
+    sdk/foobar2000/SDK/stdafx.cpp
+    sdk/foobar2000/SDK/tag_processor.cpp
+    sdk/foobar2000/SDK/tag_processor_id3v2.cpp
+    sdk/foobar2000/SDK/threaded_process.cpp
+    sdk/foobar2000/SDK/titleformat.cpp
+    sdk/foobar2000/SDK/track_property.cpp
+    sdk/foobar2000/SDK/ui.cpp
+    sdk/foobar2000/SDK/ui_element.cpp
+    sdk/foobar2000/SDK/utility.cpp
 )
 
 set(
     SDK_HELPERS_HEADERS
     sdk/foobar2000/helpers/advconfig_impl.h
     sdk/foobar2000/helpers/advconfig_runtime.h
+    sdk/foobar2000/helpers/albumArtCache.h
     sdk/foobar2000/helpers/album_art_helpers.h
     sdk/foobar2000/helpers/atl-misc.h
     sdk/foobar2000/helpers/audio_render_float.h
     sdk/foobar2000/helpers/AutoComplete.h
+    sdk/foobar2000/helpers/bitreader_helper.h
     sdk/foobar2000/helpers/BumpableElem.h
     sdk/foobar2000/helpers/callback_merit.h
+    sdk/foobar2000/helpers/CallForwarder.h
     sdk/foobar2000/helpers/callInMainThreadHelper.h
     sdk/foobar2000/helpers/CDialogResizeHelper.h
     sdk/foobar2000/helpers/cfg_dsp_chain_config.h
+    sdk/foobar2000/helpers/cfg_guidlist.h
     sdk/foobar2000/helpers/cfg_obj.h
     sdk/foobar2000/helpers/cfg_objList.h
     sdk/foobar2000/helpers/cfg_var_import.h
     sdk/foobar2000/helpers/CListControlFb2kColors.h
     sdk/foobar2000/helpers/CmdThread.h
     sdk/foobar2000/helpers/CModelessDialogMessages.h
+    sdk/foobar2000/helpers/COM_utils.h
     sdk/foobar2000/helpers/CPropVariant.h
+    sdk/foobar2000/helpers/create_directory_helper.h
     sdk/foobar2000/helpers/CSingleThreadWrapper.h
     sdk/foobar2000/helpers/CTableEditHelper-Legacy.h
-    sdk/foobar2000/helpers/DarkMode.h
-    sdk/foobar2000/helpers/dsp_dialog.h
-    sdk/foobar2000/helpers/duration_counter.h
-    sdk/foobar2000/helpers/fb2kWorkerTool.h
-    sdk/foobar2000/helpers/fb2k_threads.h
-    sdk/foobar2000/helpers/fb2k_wfx.h
-    sdk/foobar2000/helpers/fileReadAhead.h
-    sdk/foobar2000/helpers/file_streamstub.h
-    sdk/foobar2000/helpers/foobar2000+atl.h
-    sdk/foobar2000/helpers/foobar2000-lite+atl.h
-    sdk/foobar2000/helpers/fullFileBuffer.h
-    sdk/foobar2000/helpers/bitreader_helper.h
-    sdk/foobar2000/helpers/CallForwarder.h
-    sdk/foobar2000/helpers/cfg_guidlist.h
-    sdk/foobar2000/helpers/COM_utils.h
-    sdk/foobar2000/helpers/create_directory_helper.h
     sdk/foobar2000/helpers/cue_creator.h
     sdk/foobar2000/helpers/cue_parser.h
     sdk/foobar2000/helpers/cuesheet_index_list.h
+    sdk/foobar2000/helpers/DarkMode.h
     sdk/foobar2000/helpers/dialog_resize_helper.h
     sdk/foobar2000/helpers/dropdown_helper.h
+    sdk/foobar2000/helpers/dsp_dialog.h
+    sdk/foobar2000/helpers/duration_counter.h
     sdk/foobar2000/helpers/dynamic_bitrate_helper.h
+    sdk/foobar2000/helpers/fb2k_threads.h
+    sdk/foobar2000/helpers/fb2k_wfx.h
+    sdk/foobar2000/helpers/fb2kWorkerTool.h
     sdk/foobar2000/helpers/file_cached.h
     sdk/foobar2000/helpers/file_info_const_impl.h
     sdk/foobar2000/helpers/file_list_helper.h
     sdk/foobar2000/helpers/file_move_helper.h
-    sdk/foobar2000/helpers/file_win32_wrapper.h
+    sdk/foobar2000/helpers/fileReadAhead.h
+    sdk/foobar2000/helpers/file_streamstub.h
     sdk/foobar2000/helpers/filetimetools.h
+    sdk/foobar2000/helpers/file_win32_wrapper.h
+    sdk/foobar2000/helpers/foobar2000+atl.h
+    sdk/foobar2000/helpers/foobar2000-lite+atl.h
+    sdk/foobar2000/helpers/fullFileBuffer.h
     sdk/foobar2000/helpers/helpers.h
     sdk/foobar2000/helpers/icon_remapping_wildcard.h
     sdk/foobar2000/helpers/image_load_save.h
     sdk/foobar2000/helpers/inplace_edit.h
     sdk/foobar2000/helpers/input_fix_seeking.h
-    sdk/foobar2000/helpers/input_helpers.h
     sdk/foobar2000/helpers/input_helper_cue.h
+    sdk/foobar2000/helpers/input_helpers.h
     sdk/foobar2000/helpers/input_logging.h
     sdk/foobar2000/helpers/input_stream_info_reader.h
     sdk/foobar2000/helpers/metadb_handle_array.h
     sdk/foobar2000/helpers/metadb_handle_set.h
     sdk/foobar2000/helpers/metadb_info_container_impl.h
     sdk/foobar2000/helpers/metadb_io_callback_v2_data.h
-    sdk/foobar2000/helpers/meta_table_builder.h
     sdk/foobar2000/helpers/metadb_io_hintlist.h
+    sdk/foobar2000/helpers/meta_table_builder.h
     sdk/foobar2000/helpers/mp3_utils.h
     sdk/foobar2000/helpers/notifyList.h
     sdk/foobar2000/helpers/packet_decoder_aac_common.h
@@ -489,9 +447,9 @@ set(
     sdk/foobar2000/helpers/playlist_position_reference_tracker.h
     sdk/foobar2000/helpers/ProcessUtils.h
     sdk/foobar2000/helpers/ProfileCache.h
+    sdk/foobar2000/helpers/reader_pretend_nonseekable.h
     sdk/foobar2000/helpers/readers.h
     sdk/foobar2000/helpers/readers_lite.h
-    sdk/foobar2000/helpers/reader_pretend_nonseekable.h
     sdk/foobar2000/helpers/readWriteLock.h
     sdk/foobar2000/helpers/rethrow.h
     sdk/foobar2000/helpers/seekabilizer.h
@@ -505,47 +463,59 @@ set(
     sdk/foobar2000/helpers/ui_element_helpers.h
     sdk/foobar2000/helpers/VisUtils.h
     sdk/foobar2000/helpers/VolumeMap.h
-    sdk/foobar2000/helpers/win-systemtime.h
     sdk/foobar2000/helpers/win32_dialog.h
     sdk/foobar2000/helpers/win32_misc.h
-    sdk/foobar2000/helpers/WindowPositionUtils.h
     sdk/foobar2000/helpers/window_placement_helper.h
+    sdk/foobar2000/helpers/WindowPositionUtils.h
     sdk/foobar2000/helpers/winmm-types.h
+    sdk/foobar2000/helpers/win-MulDiv.h
+    sdk/foobar2000/helpers/win-systemtime.h
     sdk/foobar2000/helpers/writer_wav.h
 )
 
 set(
-    PPUI_SOURCES
-    sdk/libPPUI/AutoComplete.cpp
-    sdk/libPPUI/CEditWithButtons.cpp
-    sdk/libPPUI/clipboard.cpp
-    sdk/libPPUI/CListAccessible.cpp
-    sdk/libPPUI/CListControl-Cells.cpp
-    sdk/libPPUI/CListControl-Subst.cpp
-    sdk/libPPUI/CListControl.cpp
-    sdk/libPPUI/CListControlHeaderImpl.cpp
-    sdk/libPPUI/CListControlTruncationTooltipImpl.cpp
-    sdk/libPPUI/CListControlWithSelection.cpp
-    sdk/libPPUI/CMiddleDragImpl.cpp
-    sdk/libPPUI/commandline_parser.cpp
-    sdk/libPPUI/Controls.cpp
-    sdk/libPPUI/CDialogResizeHelper.cpp
-    sdk/libPPUI/CPowerRequest.cpp
-    sdk/libPPUI/DarkMode.cpp
-    sdk/libPPUI/EditBoxFix.cpp
-    sdk/libPPUI/gdiplus_helpers.cpp
-    sdk/libPPUI/GDIUtils.cpp
-    sdk/libPPUI/IDataObjectUtils.cpp
-    sdk/libPPUI/ImageEncoder.cpp
-    sdk/libPPUI/InPlaceCombo.cpp
-    sdk/libPPUI/InPlaceEdit.cpp
-    sdk/libPPUI/InPlaceEditTable.cpp
-    sdk/libPPUI/listview_helper.cpp
-    sdk/libPPUI/PaintUtils.cpp
-    sdk/libPPUI/TypeFind.cpp
-    sdk/libPPUI/win32_op.cpp
-    sdk/libPPUI/win32_utility.cpp
-    sdk/libPPUI/wtl-pp.cpp
+    SDK_HELPERS_SOURCES
+    sdk/foobar2000/helpers/AutoComplete.cpp
+    sdk/foobar2000/helpers/CTableEditHelper-Legacy.cpp
+    sdk/foobar2000/helpers/DarkMode.cpp
+    sdk/foobar2000/helpers/ThreadUtils.cpp
+    sdk/foobar2000/helpers/VisUtils.cpp
+    sdk/foobar2000/helpers/VolumeMap.cpp
+    sdk/foobar2000/helpers/WindowPositionUtils.cpp
+    sdk/foobar2000/helpers/album_art_helpers.cpp
+    sdk/foobar2000/helpers/cfg_guidlist.cpp
+    sdk/foobar2000/helpers/cfg_var_import.cpp
+    sdk/foobar2000/helpers/create_directory_helper.cpp
+    sdk/foobar2000/helpers/cue_creator.cpp
+    sdk/foobar2000/helpers/cue_parser.cpp
+    sdk/foobar2000/helpers/cue_parser_embedding.cpp
+    sdk/foobar2000/helpers/cuesheet_index_list.cpp
+    sdk/foobar2000/helpers/dialog_resize_helper.cpp
+    sdk/foobar2000/helpers/dropdown_helper.cpp
+    sdk/foobar2000/helpers/dynamic_bitrate_helper.cpp
+    sdk/foobar2000/helpers/file_list_helper.cpp
+    sdk/foobar2000/helpers/file_move_helper.cpp
+    sdk/foobar2000/helpers/file_win32_wrapper.cpp
+    sdk/foobar2000/helpers/filetimetools.cpp
+    sdk/foobar2000/helpers/image_load_save.cpp
+    sdk/foobar2000/helpers/inplace_edit.cpp
+    sdk/foobar2000/helpers/input_helper_cue.cpp
+    sdk/foobar2000/helpers/input_helpers.cpp
+    sdk/foobar2000/helpers/mp3_utils.cpp
+    sdk/foobar2000/helpers/packet_decoder_aac_common.cpp
+    sdk/foobar2000/helpers/packet_decoder_mp3_common.cpp
+    sdk/foobar2000/helpers/readers.cpp
+    sdk/foobar2000/helpers/seekabilizer.cpp
+    sdk/foobar2000/helpers/stream_buffer_helper.cpp
+    sdk/foobar2000/helpers/text_file_loader.cpp
+    sdk/foobar2000/helpers/text_file_loader_v2.cpp
+    sdk/foobar2000/helpers/track_property_callback_impl.cpp
+    sdk/foobar2000/helpers/ui_element_helpers.cpp
+    sdk/foobar2000/helpers/win-systemtime.cpp
+    sdk/foobar2000/helpers/win32_dialog.cpp
+    sdk/foobar2000/helpers/win32_misc.cpp
+    sdk/foobar2000/helpers/window_placement_helper.cpp
+    sdk/foobar2000/helpers/writer_wav.cpp
 )
 
 set(
@@ -553,6 +523,7 @@ set(
     sdk/libPPUI/AutoComplete.h
     sdk/libPPUI/CButtonLite.h
     sdk/libPPUI/CDialogResizeHelperCompat.h
+    sdk/libPPUI/CDialogResizeHelper.h
     sdk/libPPUI/CEditWithButtons.h
     sdk/libPPUI/CEnumString.h
     sdk/libPPUI/CFlashWindow.h
@@ -563,16 +534,16 @@ set(
     sdk/libPPUI/CListControl-Cell.h
     sdk/libPPUI/CListControl-Cells-Compat.h
     sdk/libPPUI/CListControl-Cells.h
-    sdk/libPPUI/CListControl-Subst.h
-    sdk/libPPUI/CListControl.h
     sdk/libPPUI/CListControlComplete.h
+    sdk/libPPUI/CListControl_EditImpl.h
+    sdk/libPPUI/CListControl.h
     sdk/libPPUI/CListControlHeaderImpl.h
     sdk/libPPUI/CListControlOwnerData.h
     sdk/libPPUI/CListControlSimple.h
+    sdk/libPPUI/CListControl-Subst.h
     sdk/libPPUI/CListControlTruncationTooltipImpl.h
     sdk/libPPUI/CListControlUserOptions.h
     sdk/libPPUI/CListControlWithSelection.h
-    sdk/libPPUI/CListControl_EditImpl.h
     sdk/libPPUI/CListViewCtrlEx.h
     sdk/libPPUI/CMiddleDragImpl.h
     sdk/libPPUI/CMiddleDragLite.h
@@ -583,14 +554,13 @@ set(
     sdk/libPPUI/CPowerRequest.h
     sdk/libPPUI/CPropVariant.h
     sdk/libPPUI/CWindowCreateAndDelete.h
-    sdk/libPPUI/CDialogResizeHelper.h
     sdk/libPPUI/DarkMode-CHyperLink.h
-    sdk/libPPUI/DarkMode.h
     sdk/libPPUI/DarkModeEx.h
+    sdk/libPPUI/DarkMode.h
     sdk/libPPUI/EditBoxFixes.h
-    sdk/libPPUI/gdi-types-portable.h
-    sdk/libPPUI/gdiplus-helpers-webp.h
     sdk/libPPUI/gdiplus_helpers.h
+    sdk/libPPUI/gdiplus-helpers-webp.h
+    sdk/libPPUI/gdi-types-portable.h
     sdk/libPPUI/GDIUtils.h
     sdk/libPPUI/gesture.h
     sdk/libPPUI/hookWindowMessages.h
@@ -617,12 +587,56 @@ set(
 )
 
 set(
+    PPUI_SOURCES
+    sdk/libPPUI/AutoComplete.cpp
+    sdk/libPPUI/CDialogResizeHelper.cpp
+    sdk/libPPUI/CEditWithButtons.cpp
+    sdk/libPPUI/CListAccessible.cpp
+    sdk/libPPUI/CListControl-Cells.cpp
+    sdk/libPPUI/CListControl-Subst.cpp
+    sdk/libPPUI/CListControl.cpp
+    sdk/libPPUI/CListControlHeaderImpl.cpp
+    sdk/libPPUI/CListControlTruncationTooltipImpl.cpp
+    sdk/libPPUI/CListControlWithSelection.cpp
+    sdk/libPPUI/CMiddleDragImpl.cpp
+    sdk/libPPUI/CPowerRequest.cpp
+    sdk/libPPUI/Controls.cpp
+    sdk/libPPUI/DarkMode.cpp
+    sdk/libPPUI/EditBoxFix.cpp
+    sdk/libPPUI/GDIUtils.cpp
+    sdk/libPPUI/IDataObjectUtils.cpp
+    sdk/libPPUI/ImageEncoder.cpp
+    sdk/libPPUI/InPlaceCombo.cpp
+    sdk/libPPUI/InPlaceEdit.cpp
+    sdk/libPPUI/InPlaceEditTable.cpp
+    sdk/libPPUI/PaintUtils.cpp
+    sdk/libPPUI/TypeFind.cpp
+    sdk/libPPUI/clipboard.cpp
+    sdk/libPPUI/commandline_parser.cpp
+    sdk/libPPUI/gdiplus_helpers.cpp
+    sdk/libPPUI/listview_helper.cpp
+    sdk/libPPUI/stdafx.cpp
+    sdk/libPPUI/win32_op.cpp
+    sdk/libPPUI/win32_utility.cpp
+    sdk/libPPUI/wtl-pp.cpp
+)
+
+set(
     COMPONENT_CLIENT_SOURCES
     sdk/foobar2000/foobar2000_component_client/component_client.cpp
 )
 
 set(
+    SAMPLE_HEADERS
+    sdk/foobar2000/foo_sample/dsp_sample.h
+    sdk/foobar2000/foo_sample/foobar2000-mac-class-suffix.h
+    sdk/foobar2000/foo_sample/playback_stream_capture.h
+    sdk/foobar2000/foo_sample/resource.h
+)
+
+set(
     SAMPLE_SOURCES
+    sdk/foobar2000/foo_sample/IO.cpp
     sdk/foobar2000/foo_sample/contextmenu.cpp
     sdk/foobar2000/foo_sample/decode.cpp
     sdk/foobar2000/foo_sample/dsp_sample.cpp
@@ -634,7 +648,6 @@ set(
     sdk/foobar2000/foo_sample/main.cpp
     sdk/foobar2000/foo_sample/mainmenu-dynamic.cpp
     sdk/foobar2000/foo_sample/mainmenu.cpp
-    sdk/foobar2000/foo_sample/IO.cpp
     sdk/foobar2000/foo_sample/playback_state.cpp
     sdk/foobar2000/foo_sample/playback_stream_capture.cpp
     sdk/foobar2000/foo_sample/preferences.cpp
@@ -643,12 +656,4 @@ set(
     sdk/foobar2000/foo_sample/ui_element.cpp
     sdk/foobar2000/foo_sample/ui_element_dialog.cpp
     sdk/foobar2000/foo_sample/foo_sample.rc
-)
-
-set(
-    SAMPLE_HEADERS
-    sdk/foobar2000/foo_sample/dsp_sample.h
-    sdk/foobar2000/foo_sample/playback_stream_capture.h
-    sdk/foobar2000/foo_sample/resource.h
-    sdk/foobar2000/foo_sample/stdafx.h
 )

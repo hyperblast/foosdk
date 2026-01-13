@@ -54,7 +54,7 @@ endfunction()
 option_dependency_check(FOO_SDK_HELPERS FOO_PPUI)
 option_dependency_check(FOO_SAMPLE      FOO_SDK_HELPERS)
 
-include(FileLists)
+include(SourcesWindows)
 
 if("${CMAKE_SIZEOF_VOID_P}" STREQUAL "8")
     set(SHARED_LIBRARY sdk/foobar2000/shared/shared-x64.lib)
