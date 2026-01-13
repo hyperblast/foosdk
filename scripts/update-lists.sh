@@ -24,12 +24,12 @@ function write_list()
     ) >> "$out_file"
 }
 
-function dump_headers()
+function write_headers()
 {
     ls $2/*.h | write_list "$1" "$3"
 }
 
-function dump_vcxproj()
+function write_vcxproj()
 {
     "$script_dir/dump-vcxproj.sh" "$2" | write_list "$1" "$3"
 }
@@ -41,27 +41,27 @@ function dump_sdk_windows()
 
     write_prologue
 
-    dump_headers WTL_HEADERS wtl/Include
-    dump_headers SHARED_HEADERS sdk/foobar2000/shared
+    write_headers WTL_HEADERS wtl/Include
+    write_headers SHARED_HEADERS sdk/foobar2000/shared
 
-    dump_headers PFC_HEADERS sdk/pfc '(pfc-fb2k-hooks\.h)|(nix-objects\.h)'
-    dump_vcxproj PFC_SOURCES sdk/pfc/pfc.vcxproj '(stdafx\.cpp)|(pfc-fb2k-hooks\.cpp)|(nix-objects\.cpp)'
+    write_headers PFC_HEADERS sdk/pfc '(pfc-fb2k-hooks\.h)|(nix-objects\.h)'
+    write_vcxproj PFC_SOURCES sdk/pfc/pfc.vcxproj '(stdafx\.cpp)|(pfc-fb2k-hooks\.cpp)|(nix-objects\.cpp)'
 
-    dump_headers SDK_HEADERS sdk/foobar2000/SDK
-    dump_vcxproj SDK_SOURCES sdk/foobar2000/SDK/foobar2000_SDK.vcxproj
+    write_headers SDK_HEADERS sdk/foobar2000/SDK
+    write_vcxproj SDK_SOURCES sdk/foobar2000/SDK/foobar2000_SDK.vcxproj
 
-    dump_headers SDK_HELPERS_HEADERS sdk/foobar2000/helpers
-    dump_vcxproj SDK_HELPERS_SOURCES sdk/foobar2000/helpers/foobar2000_sdk_helpers.vcxproj \
+    write_headers SDK_HELPERS_HEADERS sdk/foobar2000/helpers
+    write_vcxproj SDK_HELPERS_SOURCES sdk/foobar2000/helpers/foobar2000_sdk_helpers.vcxproj \
         '(stdafx\.cpp)|(TypeFind\.h)'
 
-    dump_headers PPUI_HEADERS sdk/libPPUI
-    dump_vcxproj PPUI_SOURCES sdk/libPPUI/libPPUI.vcxproj
+    write_headers PPUI_HEADERS sdk/libPPUI
+    write_vcxproj PPUI_SOURCES sdk/libPPUI/libPPUI.vcxproj
 
-    dump_vcxproj COMPONENT_CLIENT_SOURCES \
+    write_vcxproj COMPONENT_CLIENT_SOURCES \
         sdk/foobar2000/foobar2000_component_client/foobar2000_component_client.vcxproj
 
-    dump_headers SAMPLE_HEADERS sdk/foobar2000/foo_sample '(stdafx\.h)'
-    dump_vcxproj SAMPLE_SOURCES sdk/foobar2000/foo_sample/foo_sample.vcxproj '(PCH\.cpp)'
+    write_headers SAMPLE_HEADERS sdk/foobar2000/foo_sample '(stdafx\.h)'
+    write_vcxproj SAMPLE_SOURCES sdk/foobar2000/foo_sample/foo_sample.vcxproj '(PCH\.cpp)'
 }
 
 cd "$script_dir/.."
