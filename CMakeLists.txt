@@ -130,6 +130,12 @@ if(FOO_SAMPLE)
     endif()
 
     if(OS_MAC)
+        set_target_properties(
+            foo_sample PROPERTIES
+            BUNDLE ON
+            BUNDLE_EXTENSION component
+        )
+
         target_link_libraries(foo_sample "-framework Cocoa")
     endif()
 endif()
