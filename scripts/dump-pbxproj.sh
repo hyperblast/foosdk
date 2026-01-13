@@ -16,14 +16,33 @@ if [ ! -f "$project_file" ]; then
     exit 1
 fi
 
-source_dir="$(dirname $project_dir)"
+source_dirs=($(dirname $project_dir))
 
-if [ "$project_dir" = "." ]; then
-    path_prefix=""
-else
-    path_prefix="$source_dir/"
-fi
+shift
+
+for arg in "$@"; do
+    source_dirs+=($arg)
+done
+
+function resolve_paths
+{
+    while IFS= read -r file_name; do
+        found=0
+
+        for dir in "${source_dirs[@]}"; do
+            if [ -f "$dir/$file_name" ]; then
+                echo "$dir/$file_name"
+                found=1
+                break
+            fi
+        done
+
+        if [ $found -eq 0 ]; then
+            echo "# File not found: $file_name" >&2
+        fi
+    done
+}
 
 sed -n '/Begin PBXBuildFile section/,/End PBXBuildFile section/p' "$project_file" | \
-grep -Po '(?<=/\*).*(?=in Sources \*/)' | \
-xargs -n1 --no-run-if-empty printf '%s%s\n' "$path_prefix"
+grep -Po '(?<=/\* ).*(?= in Sources \*/)' | \
+resolve_paths

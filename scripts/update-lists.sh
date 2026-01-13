@@ -47,7 +47,7 @@ function write_vcxproj()
 
 function write_pbxproj()
 {
-    "$script_dir/dump-pbxproj.sh" "$2" | write_list "$1" "$3"
+    "$script_dir/dump-pbxproj.sh" "$2" "$4" "$5" | write_list "$1" "$3"
 }
 
 function dump_sdk_windows()
@@ -104,7 +104,9 @@ function dump_sdk_macos()
         sdk/foobar2000/foobar2000_component_client/foobar2000_component_client.xcodeproj
 
     write_headers SAMPLE_HEADERS sdk/foobar2000/foo_sample '(stdafx\.h)'
-    write_pbxproj SAMPLE_SOURCES sdk/foobar2000/foo_sample/foo_sample.xcodeproj '(PCH\.cpp)'
+    write_pbxproj SAMPLE_SOURCES sdk/foobar2000/foo_sample/foo_sample.xcodeproj '(PCH\.cpp)' \
+        sdk/foobar2000/helpers-mac \
+        sdk/foobar2000/foo_sample/Mac
 }
 
 cd "$script_dir/.."

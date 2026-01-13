@@ -517,13 +517,11 @@ set(
 set(
     SAMPLE_SOURCES
     sdk/foobar2000/foo_sample/IO.cpp
-    sdk/foobar2000/foo_sample/NSView+embed.m
+    sdk/foobar2000/foo_sample/Mac/fooSampleDSPView.mm
+    sdk/foobar2000/foo_sample/Mac/fooSampleMacPreferences.mm
     sdk/foobar2000/foo_sample/contextmenu.cpp
     sdk/foobar2000/foo_sample/decode.cpp
     sdk/foobar2000/foo_sample/dsp_sample.cpp
-    sdk/foobar2000/foo_sample/fooDecibelFormatter.m
-    sdk/foobar2000/foo_sample/fooSampleDSPView.mm
-    sdk/foobar2000/foo_sample/fooSampleMacPreferences.mm
     sdk/foobar2000/foo_sample/initquit.cpp
     sdk/foobar2000/foo_sample/input_raw.cpp
     sdk/foobar2000/foo_sample/main.cpp
@@ -532,4 +530,6 @@ set(
     sdk/foobar2000/foo_sample/preferences.cpp
     sdk/foobar2000/foo_sample/rating.cpp
     sdk/foobar2000/foo_sample/ui_and_threads.cpp
+    sdk/foobar2000/helpers-mac/NSView+embed.m
+    sdk/foobar2000/helpers-mac/fooDecibelFormatter.m
 )
