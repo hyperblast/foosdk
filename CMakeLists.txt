@@ -123,8 +123,14 @@ if(FOO_SAMPLE)
         sdk/foobar2000/helpers-mac
     )
 
+    target_link_libraries(foo_sample foosdk)
+
     if(SHARED_LIBRARY)
-        target_link_libraries(foo_sample foosdk "${CMAKE_CURRENT_SOURCE_DIR}/${SHARED_LIBRARY}")
+        target_link_libraries(foo_sample "${CMAKE_CURRENT_SOURCE_DIR}/${SHARED_LIBRARY}")
+    endif()
+
+    if(OS_MAC)
+        target_link_libraries(foo_sample "-framework Cocoa")
     endif()
 endif()
 
