@@ -117,6 +117,12 @@ add_library(foosdk STATIC ${LIB_SOURCES})
 if(FOO_SAMPLE)
     add_library(foo_sample MODULE ${SAMPLE_SOURCES} ${SAMPLE_HEADERS})
 
+    target_include_directories(
+        foo_sample PRIVATE
+        sdk/foobar2000/foo_sample
+        sdk/foobar2000/helpers-mac
+    )
+
     if(SHARED_LIBRARY)
         target_link_libraries(foo_sample foosdk "${CMAKE_CURRENT_SOURCE_DIR}/${SHARED_LIBRARY}")
     endif()
