@@ -107,7 +107,7 @@ function dump_sdk_macos()
 
     write_prologue
 
-    ignore_rules='(stdafx\.cpp)'
+    ignore_rules='(pfc-fb2k-hooks\.(h|cpp))|(stdafx\.cpp)'
     write_headers PFC_HEADERS sdk/pfc
     write_pbxproj PFC_SOURCES sdk/pfc/pfc.xcodeproj
 

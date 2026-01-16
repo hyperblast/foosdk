@@ -48,7 +48,6 @@ set(
     sdk/pfc/order_helper.h
     sdk/pfc/other.h
     sdk/pfc/pathUtils.h
-    sdk/pfc/pfc-fb2k-hooks.h
     sdk/pfc/pfc-lite.h
     sdk/pfc/pfc.h
     sdk/pfc/platform-objects.h
@@ -112,7 +111,6 @@ set(
     sdk/pfc/obj-c.mm
     sdk/pfc/other.cpp
     sdk/pfc/pathUtils.cpp
-    sdk/pfc/pfc-fb2k-hooks.cpp
     sdk/pfc/printf.cpp
     sdk/pfc/selftest.cpp
     sdk/pfc/sort.cpp
