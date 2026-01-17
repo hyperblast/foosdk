@@ -12,7 +12,7 @@ on:
 
 jobs:
 
-  build:
+  build_windows:
 
     runs-on: windows-2022
 
@@ -43,6 +43,25 @@ jobs:
     - name: Build
       run: |
         mkdir build
-        cd build
-        cmake -A ${{ matrix.arch }} -DFOO_SAMPLE=ON ..
-        msbuild -v:m -p:Configuration=Release -p:Platform=${{ matrix.arch }} foosdk.sln
+        cmake -A ${{ matrix.arch }} -DFOO_SAMPLE=ON -S . -B build
+        msbuild -v:m -p:Configuration=Release -p:Platform=${{ matrix.arch }} build\foosdk.sln
+
+  build_macos:
+
+    strategy:
+      matrix:
+        os:
+        - macos-26
+        - macos-15-intel
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Build
+      run: |
+        mkdir build
+        cmake -DFOO_SAMPLE=ON -DCMAKE_BUILD_TYPE=Release -S . -B build
+        cmake --build build --parallel
