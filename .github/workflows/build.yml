@@ -57,6 +57,9 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
+    - name: Test launch
+      run: open /System/Applications/Mail.app
+
     - name: Checkout
       uses: actions/checkout@v4
 
