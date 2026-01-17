@@ -48,7 +48,13 @@ jobs:
 
   build_macos:
 
-    runs-on: macos-26
+    strategy:
+      matrix:
+        os:
+        - macos-26
+        - macos-15-intel
+
+    runs-on: ${{ matrix.os }}
 
     steps:
     - name: Checkout
