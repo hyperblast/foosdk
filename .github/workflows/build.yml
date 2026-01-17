@@ -43,7 +43,7 @@ jobs:
     - name: Build
       run: |
         mkdir build
-        cmake -A ${{ matrix.arch }} -DFOO_SAMPLE=ON build
+        cmake -A ${{ matrix.arch }} -DFOO_SAMPLE=ON -S . -B build
         msbuild -v:m -p:Configuration=Release -p:Platform=${{ matrix.arch }} build\foosdk.sln
 
   build_macos:
@@ -57,5 +57,5 @@ jobs:
     - name: Build
       run: |
         mkdir build
-        cmake -DFOO_SAMPLE=ON -DCMAKE_BUILD_TYPE=Release build
+        cmake -DFOO_SAMPLE=ON -DCMAKE_BUILD_TYPE=Release -S . -B build
         cmake --build build --parallel
