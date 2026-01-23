@@ -15,7 +15,9 @@ if(CMAKE_SYSTEM_NAME STREQUAL Windows)
 elseif(CMAKE_SYSTEM_NAME STREQUAL Darwin)
     set(OS_MAC ON)
     include(SourcesMacOs)
-    enable_language(OBJC)
+    enable_language(OBJCXX)
+    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DDEBUG=1")
+    set(CMAKE_OBJCXX_FLAGS_DEBUG "${CMAKE_OBJCXX_FLAGS_DEBUG} -DDEBUG=1")
 else()
     message(FATAL_ERROR "Target OS is not Windows or Mac")
 endif()
@@ -34,10 +36,11 @@ if(MSVC)
     option(FOO_STATIC_STDLIB "Use static standard libraries" OFF)
 
     if(FOO_STATIC_STDLIB)
-        foreach(FLAGS CMAKE_CXX_FLAGS_DEBUG
-                  CMAKE_CXX_FLAGS_RELEASE
-                  CMAKE_CXX_FLAGS_MINSIZEREL
-                  CMAKE_CXX_FLAGS_RELWITHDEBINFO)
+        foreach(FLAGS
+            CMAKE_CXX_FLAGS_DEBUG
+            CMAKE_CXX_FLAGS_RELEASE
+            CMAKE_CXX_FLAGS_MINSIZEREL
+            CMAKE_CXX_FLAGS_RELWITHDEBINFO)
         string(REPLACE "/MD" "/MT" ${FLAGS} "${${FLAGS}}")
         endforeach()
     endif()
