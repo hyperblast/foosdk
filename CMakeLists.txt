@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.24)
 
 project(foosdk)
 
@@ -33,18 +33,6 @@ else()
 endif()
 
 if(MSVC)
-    option(FOO_STATIC_STDLIB "Use static standard libraries" OFF)
-
-    if(FOO_STATIC_STDLIB)
-        foreach(FLAGS
-            CMAKE_CXX_FLAGS_DEBUG
-            CMAKE_CXX_FLAGS_RELEASE
-            CMAKE_CXX_FLAGS_MINSIZEREL
-            CMAKE_CXX_FLAGS_RELWITHDEBINFO)
-        string(REPLACE "/MD" "/MT" ${FLAGS} "${${FLAGS}}")
-        endforeach()
-    endif()
-
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP /wd4302 /wd4838 /wd4996 /d2notypeopt")
 endif()
 
